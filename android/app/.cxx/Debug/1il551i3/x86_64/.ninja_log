@@ -1,0 +1,11 @@
+# ninja log v5
+13	258	1753777654925598929	build.ninja	7f3ef39e6d23fc48
+1	7	0	/home/irfan/metamask-mobile/android/app/.cxx/Debug/1il551i3/x86_64/CMakeFiles/cmake.verify_globs	6f540df0d2ed848b
+0	6	0	clean	9c08ff9c18f7327
+7	209	1753777654925598929	build.ninja	7f3ef39e6d23fc48
+0	6	0	/home/irfan/metamask-mobile/android/app/.cxx/Debug/1il551i3/x86_64/CMakeFiles/cmake.verify_globs	6f540df0d2ed848b
+0	13	0	clean	9c08ff9c18f7327
+0	6	0	/home/irfan/metamask-mobile/android/app/.cxx/Debug/1il551i3/x86_64/CMakeFiles/cmake.verify_globs	6f540df0d2ed848b
+0	6	0	clean	9c08ff9c18f7327
+0	5	0	/home/irfan/metamask-mobile/android/app/.cxx/Debug/1il551i3/x86_64/CMakeFiles/cmake.verify_globs	6f540df0d2ed848b
+0	6	0	clean	9c08ff9c18f7327

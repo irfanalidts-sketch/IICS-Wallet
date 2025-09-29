@@ -1,9 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-   <item android:drawable="@color/theme" />
+    <!-- Solid background -->
+    <item android:drawable="@color/theme"/>
+
+    <!-- Optional centered logo. Keep only if you want it on the splash. -->
+    <!-- Remove this <item> block if you don't want the logo. -->
     <item>
         <bitmap
             android:src="@drawable/fox"
-            android:gravity="center"
-            android:tileMode="disabled" />
+            android:gravity="center" />
     </item>
 </layer-list>

@@ -115,14 +115,14 @@
   },
   "onboarding": {
     "title": "Let’s get started!",
-    "sync_desc": "If you’ve already got the MetaMask extension or another wallet, sync or import it to manage your existing assets.",
+    "sync_desc": "If you’ve already got the IIC S extension or another wallet, sync or import it to manage your existing assets.",
     "create_desc": "Set up your first wallet and start exploring decentralized apps.",
     "import": "Import an existing wallet or create a new one",
     "import_wallet_button": "Sync or import wallet",
     "new_to_crypto": "New to crypto?",
     "start_exploring_now": "Create a new wallet",
     "unlock": "Unlock",
-    "new_to_metamask": "New to MetaMask?",
+    "new_to_metamask": "New to IIC S?",
     "already_have_wallet": "Already have a wallet?",
     "optin_back_title": "Heads up!",
     "optin_back_desc": "Please agree or disagree to the usage of data analytics.  You can also update this option in settings.",
@@ -130,15 +130,15 @@
     "warning_text_1": "Your current wallet and accounts will be",
     "warning_text_2": "removed",
     "warning_text_3": "if you proceed.",
-    "warning_text_4": "You can ONLY recover them with your wallet’s Secret Recovery Phrase. MetaMask cannot help you recover it.",
+    "warning_text_4": "You can ONLY recover them with your wallet’s Secret Recovery Phrase. IIC S cannot help you recover it.",
     "warning_proceed": "Remove wallet & proceed",
     "warning_cancel": "Cancel",
     "step1": "Wallet setup",
     "step2": "Create password",
     "step3": "Secure wallet",
     "already_have": "Already have a wallet?",
-    "sync_existing": "Sync your existing MetaMask wallet from the browser extension or import manually.",
-    "scan_title": "Steps to sync with MetaMask extension",
+    "sync_existing": "Sync your existing IIC S wallet from the browser extension or import manually.",
+    "scan_title": "Steps to sync with IIC S extension",
     "scan": "Scan",
     "scan_step_1": "Open the extension on desktop",
     "scan_step_2": "Go to Settings > Advanced",
@@ -181,12 +181,12 @@
     "setting_security_privacy": "Settings > Security & Privacy"
   },
   "onboarding_carousel": {
-    "title1": "Welcome to MetaMask",
+    "title1": "Welcome to IIC S Wallet",
     "title2": "Manage your digital assets",
     "title3": "Your gateway to web3",
-    "subtitle1": "Trusted by millions, MetaMask is a secure wallet making the world of web3 accessible to all.",
+    "subtitle1": "Trusted by millions, IIC S is a secure wallet making the world of web3 accessible to all.",
     "subtitle2": "Store, spend and send digital assets like tokens, Ethereum, unique collectibles.",
-    "subtitle3": "Login with MetaMask and make transactions to invest, earn, play games, sell and more!",
+    "subtitle3": "Login with IIC S and make transactions to invest, earn, play games, sell and more!",
     "get_started": "Get started"
   },
   "onboarding_wizard": {
@@ -216,7 +216,7 @@
     "step4": {
       "title": "Main Menu",
       "content1": "You can access Transaction history, Settings, and Support from this menu.",
-      "content2": "You can take more actions with your accounts & access MetaMask settings."
+      "content2": "You can take more actions with your accounts & access IIC S settings."
     },
     "step5": {
       "title": "Explore the Browser",
@@ -235,7 +235,7 @@
     },
     "step1": {
       "title": "Welcome to your wallet!",
-      "content1": "On the blockchain, you need a wallet (and maybe some ETH). So let’s take a look at how to use your MetaMask wallet."
+      "content1": "On the blockchain, you need a wallet (and maybe some ETH). So let’s take a look at how to use your IIC S wallet."
     },
     "step2": {
       "title": "Your accounts",
@@ -267,14 +267,14 @@
     "subtitle": "This shouldn’t take long"
   },
   "import_wallet": {
-    "title": "Already a MetaMask user?",
+    "title": "Already a IIC S user?",
     "sub_title": "Sync with the extension",
     "sync_help": "Sync your wallet with the extension",
     "sync_help_step_one": "1. Open the extension",
     "sync_help_step_two": "2. Go to Settings > Advanced",
     "sync_help_step_three": "3. Click on \"Sync with Mobile\"",
     "sync_help_step_four": "4. Scan the QR Code to start syncing",
-    "sync_from_browser_extension_button": "Sync with MetaMask extension",
+    "sync_from_browser_extension_button": "Sync with IIC S extension",
     "or": "OR",
     "import_from_seed_button": "Import using Secret Recovery Phrase"
   },
@@ -296,18 +296,18 @@
     "this_action": "This action cannot be undone.",
     "you_can_only": "You can only get this wallet back with the info used when creating it, such as your Secret Recovery Phrase, Google account, or Apple account. MetaMask doesn’t have this info.",
     "recovery_phrase": "Secret Recovery Phrase ",
-    "metamask_does_not": "MetaMask does not have your Secret Recovery Phrase.",
+    "metamask_does_not": "IIC S does not have your Secret Recovery Phrase.",
     "i_understand": "I understand, continue",
     "passcode_not_set_error": "Error: Passcode not set.",
     "wrong_password_error": "Error: Decrypt failed",
     "wrong_password_error_android": "Error: error:1e000065:Cipher functions:OPENSSL_internal:BAD_DECRYPT",
     "vault_error": "Error: Cannot unlock without a previous vault.",
-    "clean_vault_error": "MetaMask encountered an error due to reaching a storage limit. The local data has been corrupted. Please reinstall MetaMask and restore with your Secret Recovery Phrase.",
+    "clean_vault_error": "IIC S encountered an error due to reaching a storage limit. The local data has been corrupted. Please reinstall MetaMask and restore with your Secret Recovery Phrase.",
     "security_alert_title": "Security Alert",
     "security_alert_desc": "In order to proceed, you need to turn Passcode on or any biometrics authentication method supported in your device (FaceID, TouchID or Fingerprint)",
     "forgot_password_desc": "Forgot your password?",
-    "forgot_password_desc_2": "MetaMask can’t recover your password for you.",
-    "forgot_password_point_1": "If you’re logged into MetaMask on a device with",
+    "forgot_password_desc_2": "IIC S can’t recover your password for you.",
+    "forgot_password_point_1": "If you’re logged into IIC S on a device with",
     "forgot_password_point_1_bold": "biometrics turned on",
     "forgot_password_point_1_1": "(like Face ID), you can reset your password there.",
     "forgot_password_point_2": "If you have your",
@@ -316,7 +316,7 @@
     "reset_wallet": "Reset wallet",
     "reset_wallet_desc": "Your wallet data will be",
     "reset_wallet_desc_bold": "permanently erased",
-    "reset_wallet_desc_2": "from MetaMask on this device. This can’t be undone.",
+    "reset_wallet_desc_2": "from IIC S on this device. This can’t be undone.",
     "reset_wallet_desc_login": "To restore your wallet, you can use your Secret Recovery Phrase, or your Google or Apple account password. MetaMask doesn’t have this information.",
     "reset_wallet_desc_srp": "To restore your wallet, you can use your Secret Recovery Phrase. MetaMask doesn’t have this information."
   },
@@ -332,9 +332,9 @@
     "error": "Error"
   },
   "choose_password": {
-    "title": "MetaMask password",
-    "description": "Unlocks MetaMask on this device only.",
-    "subtitle": "This password will unlock your MetaMask wallet only on this device.",
+    "title": "IIC S password",
+    "description": "Unlocks IIC S on this device only.",
+    "subtitle": "This password will unlock your IIC S wallet only on this device.",
     "password": "Create new password",
     "confirm_password": "Confirm password",
     "create_button": "Create password",
@@ -352,7 +352,7 @@
     "remember_me": "Remember me",
     "security_alert_title": "Security Alert",
     "security_alert_message": "In order to proceed, you need to turn Passcode on or any biometrics authentication method supported in your device (FaceID, TouchID or Fingerprint)",
-    "i_understand": "I understand that MetaMask cannot recover this password for me.",
+    "i_understand": "I understand that IIC S cannot recover this password for me.",
     "learn_more": "Learn more.",
     "secure": "Secure wallet",
     "confirm": "Confirm Secret Recovery Phrase",
@@ -363,7 +363,7 @@
   },
   "reset_password": {
     "title": "Change password",
-    "subtitle": "This password will unlock your MetaMask wallet only on this device.",
+    "subtitle": "This password will unlock your IIC S wallet only on this device.",
     "password": "New Password",
     "confirm_password": "Confirm password",
     "reset_button": "Reset password",
@@ -381,7 +381,7 @@
     "remember_me": "Remember me",
     "security_alert_title": "Security Alert",
     "security_alert_message": "In order to proceed, you need to turn Passcode on or any biometrics authentication method supported in your device (FaceID, TouchID or Fingerprint)",
-    "i_understand": "I understand that MetaMask cannot recover this password for me.",
+    "i_understand": "I understand that IIC S cannot recover this password for me.",
     "learn_more": "Learn more.",
     "secure": "Secure wallet",
     "confirm": "Confirm Secret Recovery Phrase",
@@ -403,13 +403,13 @@
     "invalid_qr_code_title": "Invalid QR Code",
     "invalid_qr_code_message": "This QR code doesn't represent a valid Secret Recovery Phrase",
     "enter_your_secret_recovery_phrase": "Enter your Secret Recovery Phrase",
-    "metamask_password": "MetaMask password",
-    "metamask_password_description": "Unlocks MetaMask on this device only.",
+    "metamask_password": "IIC S password",
+    "metamask_password_description": "Unlocks IIC S on this device only.",
     "seed_phrase_required": "Secret Recovery Phrase is required",
     "re_enter_password": "Re-enter your password",
     "use_at_least_8_characters": "Use at least 8 characters",
     "unlock_with_face_id": "Unlock with Face ID?",
-    "learn_more": "If I forget this password, MetaMask can't recover it for me.",
+    "learn_more": "If I forget this password, IIC S can't recover it for me.",
     "seed_phrase_length_error": "Secret Recovery Phrase must be 12, 15, 18, 21, or 24 words",
     "continue": "Continue",
     "clear_all": "Clear all",
@@ -454,7 +454,7 @@
     "lock_ok": "YES",
     "lock_cancel": "NO",
     "feedback": "Feedback",
-    "metamask_support": "MetaMask Support",
+    "metamask_support": "IIC S Support",
     "public_address": "Public Address"
   },
   "send": {
@@ -588,7 +588,7 @@
       "subtitle": "Move across 9 chains, all within your wallet"
     },
     "card": {
-      "title": "MetaMask Card",
+      "title": "IIC S Card",
       "subtitle": "Available in select regions"
     },
     "fund": {
@@ -596,7 +596,7 @@
       "subtitle": "Add or transfer tokens to get started"
     },
     "cashout": {
-      "title": "Cash out with MetaMask",
+      "title": "Cash out with IIC S",
       "subtitle": "Sell your crypto for cash"
     },
     "aggregated": {
@@ -605,7 +605,7 @@
     },
     "multisrp": {
       "title": "Add multiple Secret Recovery Phrases",
-      "subtitle": "Import and use multiple wallets in MetaMask"
+      "subtitle": "Import and use multiple wallets in IIC S"
     },
     "solana": {
       "title": "Solana is now supported",
@@ -660,7 +660,7 @@
     "show_tokens_without_balance": "Show tokens without balance",
     "no_nfts_yet": "No NFTs yet",
     "nfts_autodetection_title": "NFT detection",
-    "nfts_autodetection_desc": "Let MetaMask automatically detect and display NFTs in your wallet.",
+    "nfts_autodetection_desc": "Let IIC S automatically detect and display NFTs in your wallet.",
     "network_details_check": "Network details check",
     "network_with_chain_id": "The network with chain ID",
     "chain_list_returned_different_ticker_symbol": "This token symbol doesn't match the network name or chain ID entered. Many popular tokens use similar symbols, which scammers can use to trick you into sending them a more valuable token in return. Verify everything before you continue.",
@@ -751,7 +751,7 @@
       "remove_nft": "Remove NFT"
     },
     "attributes": "Attributes",
-    "disclaimer": "Disclaimer: MetaMask pulls the media file from the source URL. This URL is sometimes changed by the marketplace the NFT was minted on."
+    "disclaimer": "Disclaimer: IIC S pulls the media file from the source URL. This URL is sometimes changed by the marketplace the NFT was minted on."
   },
   "activity_view": {
     "title": "Activity"
@@ -807,8 +807,8 @@
     "privacy_policy_button": "Privacy Policy",
     "agree": "I Agree",
     "decline": "No Thanks",
-    "description_title": "Help us improve MetaMask",
-    "description_content_1": "We’d like to gather basic usage data to improve MetaMask. Know that we never sell the data you provide here.",
+    "description_title": "Help us improve IIC S",
+    "description_content_1": "We’d like to gather basic usage data to improve IIC S. Know that we never sell the data you provide here.",
     "description_content_2": "When we gather metrics, it will always be...",
     "description_content_3": "Learn how we protect your privacy while collecting usage data for your profile.",
     "checkbox": "We'll use this data to learn how you interact with our marketing communications. We may share relevant news (like product features).",
@@ -821,12 +821,12 @@
     "cta_no_thanks": "No thanks",
     "cta_i_agree": "I agree",
     "fine_print_1_legacy": "This data is aggregated and is therefore anonymous for the purposes of General Data Protection Regulation (EU) 2016/679.",
-    "fine_print_2a_legacy": "*When you use Infura as your default RPC provider in MetaMask, Infura will collect your IP address and your Ethereum wallet address when you send a transaction. We don’t store this information in a way that allows our systems to associate those two pieces of data. You can configure your RPC provider",
-    "fine_print_2b_legacy": "before proceeding.\nFor more information on how MetaMask and Infura interact from a data collection perspective, see our update",
+    "fine_print_2a_legacy": "*When you use Infura as your default RPC provider in IIC S, Infura will collect your IP address and your Ethereum wallet address when you send a transaction. We don’t store this information in a way that allows our systems to associate those two pieces of data. You can configure your RPC provider",
+    "fine_print_2b_legacy": "before proceeding.\nFor more information on how IIC S and Infura interact from a data collection perspective, see our update",
     "fine_print_2c_legacy": ". For more information on our privacy practices in general, see our Privacy Policy",
     "here_legacy": "here",
-    "description_content_1_legacy": "MetaMask would like to gather usage data to better understand how our users interact with MetaMask. This data will be used to provide the service, which includes improving the service based on your use.",
-    "description_content_2_legacy": "MetaMask will...",
+    "description_content_1_legacy": "IIC S would like to gather usage data to better understand how our users interact with MetaMask. This data will be used to provide the service, which includes improving the service based on your use.",
+    "description_content_2_legacy": "IIC S will...",
     "action_description_1_legacy": "Always allow you to opt-out via Settings",
     "action_description_2_legacy": "Send anonymized click & pageview events",
     "action_description_3_legacy": "collect information we don’t need to provide the service (such as keys, addresses, transaction hashes, or balances)",
@@ -923,7 +923,7 @@
     "no": "No",
     "yes_remove_it": "Yes, remove it",
     "remove_hardware_account": "Remove hardware account",
-    "remove_hw_account_alert_description": "Are you sure you want to remove this hardware wallet account? You’ll have to resync your hardware wallet if you want to use this account again with MetaMask Mobile.",
+    "remove_hw_account_alert_description": "Are you sure you want to remove this hardware wallet account? You’ll have to resync your hardware wallet if you want to use this account again with IIC S Mobile.",
     "remove_snap_account": "Remove snap account",
     "remove_snap_account_alert_description": "This account will be removed from your wallet. Please make sure you have the original Secret Recovery Phrase or private key for this imported account before continuing. You can import or create accounts again from the account drop-down.",
     "remove_account_alert_remove_btn": "Remove",
@@ -963,7 +963,7 @@
     "learn_more": "Learn more",
     "advisory_by": "Advisory provided by Ethereum Phishing Detector and PhishFort",
     "potential_threat": "Potential threats include",
-    "fake_metamask": "Fake versions of MetaMask",
+    "fake_metamask": "Fake versions of IIC S",
     "srp_theft": "Secret recovery phrase or password theft",
     "malicious_transactions": "Malicious transactions resulting in stolen assets",
     "secret_recovery_phrase": "Secret Recovery Phrase",
@@ -1030,7 +1030,7 @@
   },
   "data_collection_modal": {
     "accept": "Okay",
-    "content": "You turned off data collection for our marketing purposes. This only applies to this device. If you use MetaMask on other devices, make sure to opt out there as well."
+    "content": "You turned off data collection for our marketing purposes. This only applies to this device. If you use IIC S on other devices, make sure to opt out there as well."
   },
   "account_selector": {
     "prev": "PREV",
@@ -1052,7 +1052,7 @@
     "current_conversion": "Base Currency",
     "current_language": "Current Language",
     "ipfs_gateway": "IPFS Gateway",
-    "ipfs_gateway_content": "MetaMask uses third-party services to show images of your NFTs stored on IPFS, display information related to ENS addresses entered in your browser's address bar, and fetch icons for different tokens. Your IP address may be exposed to these services when you’re using them.",
+    "ipfs_gateway_content": "IIC S uses third-party services to show images of your NFTs stored on IPFS, display information related to ENS addresses entered in your browser's address bar, and fetch icons for different tokens. Your IP address may be exposed to these services when you’re using them.",
     "ipfs_gateway_down": "Your current IPFS gateway is down",
     "ipfs_gateway_desc": "Choose your preferred IPFS gateway.",
     "search_engine": "Search Engine",
@@ -1061,7 +1061,7 @@
     "add_network_title": "Add a network",
     "auto_lock": "Auto-lock",
     "auto_lock_desc": "Choose the amount of time before the application automatically locks.",
-    "state_logs_desc": "This will help MetaMask debug any issue you might encounter. Please send it to MetaMask support via hamburger icon > Send Feedback, or reply to your existing ticket if you have one.",
+    "state_logs_desc": "This will help IIC S debug any issue you might encounter. Please send it to IIC S support via hamburger icon > Send Feedback, or reply to your existing ticket if you have one.",
     "autolock_immediately": "Immediately",
     "autolock_never": "Never",
     "autolock_after": "After {{time}} seconds",
@@ -1096,7 +1096,7 @@
     "protect_title": "Wallet recovery",
     "video_failed": "Video Failed to Load.",
     "protect_desc": "Back up your Secret Recovery Phrase so you never lose access to your wallet. Be sure to store it in a safe place that only you can access and won’t forget.",
-    "protect_desc_no_backup": "This is your wallet’s 12 word phrase. This phrase can be used to take control of all your current and future accounts, including the ability to send away funds in your wallet. Keep this phrase stored safely, DO NOT share it with anyone. MetaMask cannot help you recover this key.",
+    "protect_desc_no_backup": "This is your wallet’s 12 word phrase. This phrase can be used to take control of all your current and future accounts, including the ability to send away funds in your wallet. Keep this phrase stored safely, DO NOT share it with anyone. IIC S cannot help you recover this key.",
     "learn_more": "Learn more.",
     "seedphrase_not_backed_up": "Important! Secret Recovery Phrase not backed up",
     "seedphrase_backed_up": "Secret Recovery Phrase backed up",
@@ -1186,9 +1186,9 @@
     "remove_network_title": "Do you want to remove this network?",
     "remove_network": "Remove",
     "cancel_remove_network": "Cancel",
-    "info_title": "About MetaMask",
-    "info_title_beta": "About MetaMask Beta",
-    "info_title_flask": "About MetaMask Flask",
+    "info_title": "About IIC S",
+    "info_title_beta": "About IIC S Beta",
+    "info_title_flask": "About IIC S Flask",
     "experimental_title": "Experimental",
     "experimental_desc": "WalletConnect & more...",
     "legal_title": "Legal",
@@ -1274,7 +1274,7 @@
     "delete_metrics_confirm_modal_title": "Delete MetaMetrics data?",
     "delete_metrics_confirm_modal_description": "We are about to remove all your MetaMetrics data. Are you sure?",
     "delete_wallet_data_title": "Delete wallet",
-    "delete_wallet_data_description": "This will remove all wallet related data from your device. Your accounts exist on the blockchain and are not related to MetaMask. You can always recover your accounts using your Secret Recovery Phrase.",
+    "delete_wallet_data_description": "This will remove all wallet related data from your device. Your accounts exist on the blockchain and are not related to IIC S. You can always recover your accounts using your Secret Recovery Phrase.",
     "delete_wallet_data_button": "Delete wallet",
     "delete_data_status_title": "Deletion Task Status",
     "delete_data_status_description": "The current status is",
@@ -1285,7 +1285,7 @@
     "clear_sdk_connections_text": "All connections will be cleared and dapps will need to request connection again",
     "sdk_connections": "MetaMask SDK Connections",
     "manage_sdk_connections_title": "Manage connections",
-    "manage_sdk_connections_text": "Remove connections to sites and/or MetaMask SDK.",
+    "manage_sdk_connections_text": "Remove connections to sites and/or IIC S SDK.",
     "fiat_on_ramp": {
       "title": "Buy & Sell Crypto",
       "description": "Region & more...",
@@ -1310,11 +1310,11 @@
     "contact_support": "Contact support",
     "display_nft_media": "Display NFT Media",
     "display_nft_media_desc": "Displaying NFT media and data exposes your IP address to OpenSea or other third parties. NFT autodetection relies on this feature, and won't be available when this is turned off.",
-    "autodetect_nft_desc": "Let MetaMask add NFTs you own using third-party services (like OpenSea). Autodetecting NFTs exposes your IP and account address to these services. Enabling this feature could associate your IP address with your Ethereum address and display fake NFTs airdropped by scammers. You can add tokens manually to avoid this risk.",
+    "autodetect_nft_desc": "Let IIC S add NFTs you own using third-party services (like OpenSea). Autodetecting NFTs exposes your IP and account address to these services. Enabling this feature could associate your IP address with your Ethereum address and display fake NFTs airdropped by scammers. You can add tokens manually to avoid this risk.",
     "incoming_transactions_title": "Show incoming transactions",
     "incoming_transactions_content": "This relies on the network you select which will expose your Ethereum address and your IP address.",
     "display_nft_media_desc_new": "Displaying NFT media and data exposes your IP address to OpenSea or other third parties. NFT autodetection relies on this feature, and won't be available when turned off. If NFT media is fully located on IPFS, it can still be displayed even when this feature is turned off.",
-    "use_safe_chains_list_validation_desc_1": "MetaMask uses a third-party service called ",
+    "use_safe_chains_list_validation_desc_1": "IIC S uses a third-party service called ",
     "use_safe_chains_list_validation_desc_2": "to show accurate and standardized network details. This reduces your chances of connecting to malicious or incorrect network. When using this feature, your IP address is exposed to  ",
     "snaps": {
       "title": "Snaps",
@@ -1330,7 +1330,7 @@
         "remove_button_label": "Remove {{snapName}}",
         "remove_account_snap_warning": {
           "title": "Remove Snap",
-          "description": "Removing this Snap removes these accounts from MetaMask:",
+          "description": "Removing this Snap removes these accounts from IIC S:",
           "remove_account_snap_alert_description_1": "Type",
           "remove_account_snap_alert_description_2": "to confirm you want to remove this snap:",
           "banner_title": "Be sure you can access any accounts created by this Snap on your own before removing it",
@@ -1409,7 +1409,7 @@
     "simulation_details_description": "Turn this on to estimate balance changes of transactions before you confirm them. This doesn't guarantee the final outcome of your transactions. ",
     "simulation_details_learn_more": "Learn more.",
     "aes_crypto_test_form_title": "AES Crypto - Test Form",
-    "aes_crypto_test_form_description": "Section exclusively developed for E2E testing. If this is visible in your app, please report it to MetaMask support.",
+    "aes_crypto_test_form_description": "Section exclusively developed for E2E testing. If this is visible in your app, please report it to IIC S support.",
     "developer_options": {
       "title": "Developer Options",
       "generate_trace_test": "Generate Trace Test",
@@ -1439,7 +1439,7 @@
     "manage_connections": "Manage Connections",
     "manage": "Manage",
     "cancel": "Cancel",
-    "loading": "Connecting to MetaMask...",
+    "loading": "Connecting to IIC S...",
     "unkown_dapp": "DAPP name not available",
     "unknown": "Unknown",
     "no_connections": "No connections",
@@ -1465,7 +1465,7 @@
   "sdk_feedback_modal": {
     "ok": "OK",
     "title": "Account couldn't connect",
-    "info": "Please scan the QR code on the dApp to reconnect to MetaMask"
+    "info": "Please scan the QR code on the dApp to reconnect to IIC S"
   },
   "app_information": {
     "title": "Information",
@@ -1490,7 +1490,7 @@
       "Secret Recovery Phrase (SRP)",
       "gives",
       "full access to your wallet, funds and accounts.\n\n",
-      "MetaMask is a",
+      "IIC S is a",
       "non-custodial wallet.",
       "That means,",
       "you are the owner of your SRP."
@@ -1499,14 +1499,14 @@
     "private_key_warning": "This is the private key for the current selected account: {{accountName}}. Never disclose this key. Anyone with your private key can fully control your account, including transferring away any of your funds.",
     "seed_phrase_warning_explanation": [
       "Make sure nobody is looking at your screen. ",
-      "MetaMask Support will never request this."
+      "IIC S Support will never request this."
     ],
     "private_key_warning_explanation": "Never disclose this key. Anyone with your private key can fully control your account, including transferring away any of your funds.",
     "reveal_credential_modal": [
       "Your {{credentialName}} provides ",
       "full access to your account and funds.\n\nDo not share this with anyone.\n",
       "full access to your wallet and funds.\n\nDo not share this with anyone.\n",
-      "MetaMask Support will not request this, ",
+      "IIC S Support will not request this, ",
       "but phishers might."
     ],
     "seed_phrase": "Your Secret Recovery Phrase",
@@ -1543,7 +1543,7 @@
   },
   "password_reset": {
     "password_title": "Password",
-    "password_desc": "Choose a strong password to unlock MetaMask app on your device. If you lose this password, you will need your Secret Recovery Phrase to re-import your wallet.",
+    "password_desc": "Choose a strong password to unlock IIC S app on your device. If you lose this password, you will need your Secret Recovery Phrase to re-import your wallet.",
     "password_learn_more": "Learn more.",
     "change_password": "Change password",
     "password_hint": "Password hint"
@@ -1615,7 +1615,7 @@
       "show_less": "Show less"
     },
     "activity": "{{symbol}} activity",
-    "disclaimer": "Market data is provided by one or more third-party data sources, including CoinGecko. Such third-party content is provided solely for informational purposes and should not be treated as advice to buy, sell, or use any particular asset. MetaMask does not suggest the use of this content for any particular purpose and is not responsible for its accuracy."
+    "disclaimer": "Market data is provided by one or more third-party data sources, including CoinGecko. Such third-party content is provided solely for informational purposes and should not be treated as advice to buy, sell, or use any particular asset. IIC S does not suggest the use of this content for any particular purpose and is not responsible for its accuracy."
   },
   "account_details": {
     "title": "Account Details",
@@ -1627,7 +1627,7 @@
   },
   "enable_nft-auto-detection": {
     "title": "Enable NFT autodetection",
-    "description": "Allow MetaMask to detect and display your NFTs with autodetection. You’ll be able to:",
+    "description": "Allow IIC S to detect and display your NFTs with autodetection. You’ll be able to:",
     "immediateAccess": "Immediately access your NFTs",
     "navigate": "Effortlessly navigate your digital assets",
     "dive": "Dive straight into using your NFTs",
@@ -1667,9 +1667,9 @@
     "cancel": "Cancel",
     "error": "Error",
     "attempting_to_scan_with_wallet_locked": "Looks like you're trying to scan a QR code, you need to unlock your wallet to be able to use it.",
-    "attempting_sync_from_wallet_error": "Looks like you're trying to sync with the extension. In order to do so, you will need to erase your current wallet. \n\nOnce you've erased or reinstalled a fresh version of the app, select the option to \"Sync with MetaMask Extension\". Important! Before erasing your wallet, make sure you've backed up your Secret Recovery Phrase.",
+    "attempting_sync_from_wallet_error": "Looks like you're trying to sync with the extension. In order to do so, you will need to erase your current wallet. \n\nOnce you've erased or reinstalled a fresh version of the app, select the option to \"Sync with IIC S Extension\". Important! Before erasing your wallet, make sure you've backed up your Secret Recovery Phrase.",
     "not_allowed_error_title": "Turn on camera access",
-    "not_allowed_error_desc": "To scan a QR code, you'll need to give MetaMask camera access from your device's settings menu.",
+    "not_allowed_error_desc": "To scan a QR code, you'll need to give IIC S camera access from your device's settings menu.",
     "unrecognized_address_qr_code_title": "Unrecognized QR Code",
     "unrecognized_address_qr_code_desc": "Sorry, this QR code is not associated with an account address or a contract address.",
     "url_redirection_alert_title": "You are about to visit  an external link",
@@ -1790,7 +1790,7 @@
     "gas_education_1": "Gas fees are paid to crypto miners who process transactions on the ",
     "gas_education_2_ethereum": "Ethereum network.",
     "gas_education_2": "network.",
-    "gas_education_3": "MetaMask does not profit from gas fees.",
+    "gas_education_3": "IIC S does not profit from gas fees.",
     "gas_education_4": "Gas fees fluctuate based on network traffic and transaction complexity.",
     "gas_education_learn_more": "Learn more about gas fees",
     "confusable_title": "Check the recipient address",
@@ -1805,7 +1805,7 @@
     "invalid_qr_code_sync": "Invalid QR code. Please scan the sync QR code of the hardware wallet.",
     "no_camera_permission": "Camera not authorized. Please give permission and retry",
     "invalid_qr_code_sign": "Invalid QR code. Please check your hardware and retry.",
-    "no_camera_permission_android": "You need to grant MetaMask access to your camera to proceed. You may also need to change your system settings.",
+    "no_camera_permission_android": "You need to grant IIC S access to your camera to proceed. You may also need to change your system settings.",
     "mismatched_qr_request_id": "Incongruent transaction data. Please use your hardware wallet to sign the QR code below and tap 'Get Signature'.",
     "fiat_conversion_not_available": "Fiat conversions are not available at this moment",
     "hex_data_copied": "Hex data copied to clipboard",
@@ -1824,7 +1824,7 @@
     "save": "Save",
     "warning_gas_limit": "Gas limit must be greater than 20999",
     "warning_gas_limit_estimated": "Estimated gas limit is {{gas}}, use it as minimum value",
-    "cost_explanation": "The gas fee covers the cost of processing your transaction on the Ethereum network. MetaMask does not profit from this fee. The higher the fee the better chances of your transaction getting processed."
+    "cost_explanation": "The gas fee covers the cost of processing your transaction on the Ethereum network. IIC S does not profit from this fee. The higher the fee the better chances of your transaction getting processed."
   },
   "spend_limit_edition": {
     "save": "Save",
@@ -1893,7 +1893,7 @@
     "change_url": "Change url",
     "switch_network": "Switch network",
     "dapp_browser": "DAPP BROWSER",
-    "dapp_browser_message": "MetaMask is your wallet and browser for the decentralized web. Have a look around!",
+    "dapp_browser_message": "IIC S is your wallet and browser for the decentralized web. Have a look around!",
     "featured_dapps": "FEATURED DAPPS",
     "my_favorites": "MY FAVORITES",
     "search": "Search or type a URL",
@@ -2074,7 +2074,7 @@
     "status_cancelled_header": "Your transaction was canceled",
     "status_cancelled_description": "Your transaction couldn't be completed, so it was canceled to save you from paying unnecessary gas fees.",
     "status_failed_header": "Your transaction failed",
-    "status_failed_description": "Sudden market changes can cause failures. If the problem continues, reach out to MetaMask customer support.",
+    "status_failed_description": "Sudden market changes can cause failures. If the problem continues, reach out to IIC S customer support.",
     "view_transaction": "View transaction",
     "view_activity": "View activity",
     "return_to_dapp": "Return to {{dappName}}",
@@ -2126,8 +2126,8 @@
     "status_not_ok": "The network is having some issues",
     "want_to_add_network": "Want to add this network?",
     "add_custom_network": "Add custom network",
-    "network_infomation": "This allows this network to be used within MetaMask",
-    "network_endorsement": "MetaMask does not endorse custom networks or their security.",
+    "network_infomation": "This allows this network to be used within IIC S",
+    "network_endorsement": "IIC S does not endorse custom networks or their security.",
     "learn_about": "Learn about",
     "network_risk": "scams and network security risks",
     "network_display_name": "Display name",
@@ -2182,7 +2182,7 @@
     "show_test_networks": "Show test networks",
     "deprecated_goerli": "Due to the protocol changes of Ethereum: Goerli test network may not work as reliably and will be deprecated soon.",
     "network_deprecated_title": "This network is deprecated",
-    "network_deprecated_description": "The network you're trying to connect to is no longer supported on Metamask.",
+    "network_deprecated_description": "The network you're trying to connect to is no longer supported on IIC S.",
     "edit_networks_title": "Edit networks"
   },
   "permissions": {
@@ -2203,7 +2203,7 @@
     "cancel": "Cancel",
     "got_it": "Got it",
     "connection_details_title": "Connection Details",
-    "connection_details_description": "You connected to this site using the MetaMask browser on {{connectionDateTime}}",
+    "connection_details_description": "You connected to this site using the IIC S browser on {{connectionDateTime}}",
     "title_add_network_permission": "Add network permission",
     "add_this_network": "Add this network",
     "permitted_networks": "Permitted networks",
@@ -2215,7 +2215,7 @@
     "connect_an_account": "Connect an account"
   },
   "account_dapp_connections": {
-    "account_summary_header": "Connect this website with MetaMask"
+    "account_summary_header": "Connect this website with IIC S"
   },
   "select": {
     "cancel": "Cancel",
@@ -2268,9 +2268,9 @@
   },
   "authentication": {
     "auth_prompt_title": "Authentication required",
-    "auth_prompt_desc": "Please authenticate in order to use MetaMask",
+    "auth_prompt_desc": "Please authenticate in order to use IIC S",
     "fingerprint_prompt_title": "Authentication required",
-    "fingerprint_prompt_desc": "Use your fingerprint to unlock MetaMask",
+    "fingerprint_prompt_desc": "Use your fingerprint to unlock IIC S",
     "fingerprint_prompt_cancel": "Cancel"
   },
   "accountApproval": {
@@ -2292,7 +2292,7 @@
   },
   "import_private_key": {
     "title": "Import Account",
-    "description_one": "Imported accounts are viewable in your wallet but are not recoverable with your MetaMask Secret Recovery Phrase.",
+    "description_one": "Imported accounts are viewable in your wallet but are not recoverable with your IIC S Secret Recovery Phrase.",
     "learn_more_here": "Learn more about imported accounts here.",
     "subtitle": "Paste your private key string",
     "cta_text": "IMPORT",
@@ -2304,7 +2304,7 @@
   },
   "import_private_key_success": {
     "title": "Account successfully imported!",
-    "description_one": "You'll now be able to view your account in MetaMask."
+    "description_one": "You'll now be able to view your account in IIC S."
   },
   "import_new_secret_recovery_phrase": {
     "title": "Import Secret Recovery Phrase",
@@ -2344,7 +2344,7 @@
     "step_1_description": "Create password",
     "step_2": "Step 2:",
     "step_2_description": "Save wallet Secret Recovery Phrase",
-    "info_text_1": "Take a few moments to finish setting up your MetaMask wallet.",
+    "info_text_1": "Take a few moments to finish setting up your IIC S wallet.",
     "info_text_2": "This will ensure only you can access your funds and will let you recover your wallet if you lose your device",
     "cta_text": "Create Password",
     "creating_password": "Creating password...",
@@ -2365,9 +2365,9 @@
     "skip_title": "Skip account security?",
     "skip_check": "If you lose this Secret Recovery Phrase, you won’t be able to access this wallet.",
     "what_is_seedphrase_title": "What’s a Secret Recovery Phrase?",
-    "what_is_seedphrase_text_1": "A Secret Recovery Phrase, also called a seed phrase or mnemonic, is a set of words that lets you access and control your crypto wallet. To move your wallet to MetaMask, you need this phrase.",
+    "what_is_seedphrase_text_1": "A Secret Recovery Phrase, also called a seed phrase or mnemonic, is a set of words that lets you access and control your crypto wallet. To move your wallet to IIC S, you need this phrase.",
     "what_is_seedphrase_text_2": "You must keep your Secret Recovery Phrase secret and safe. If someone gets your Secret Recovery Phrase, they’ll gain control over your accounts.",
-    "what_is_seedphrase_text_3": "Save it in a place where only you can access it. If you lose it, not even MetaMask can help you recover it.",
+    "what_is_seedphrase_text_3": "Save it in a place where only you can access it. If you lose it, not even IIC S can help you recover it.",
     "what_is_seedphrase_text_4": "Anyone with your Secret Recovery Phrase can:",
     "seedPhrase_point_1": "Take all your money",
     "seedPhrase_point_2": "Confirm transactions",
@@ -2445,7 +2445,7 @@
   },
   "account_backup_step_6": {
     "title": "Security Tips",
-    "info_text": "MetaMask cannot recover your Secret Recovery Phrase if you lose it",
+    "info_text": "IIC S cannot recover your Secret Recovery Phrase if you lose it",
     "tip_1": "Keep multiple backups of your Secret Recovery Phrase",
     "tip_2": "Store the phrase in a trusted password manager and paper backups in a safe place",
     "tip_3": "Never share this phrase with anyone",
@@ -2500,7 +2500,7 @@
     "congratulations": "Congratulations",
     "success": "You’ve successfully protected your wallet. Remember to keep your Secret Recovery Phrase safe, it's your responsibility!",
     "hint": "Leave yourself a hint?",
-    "recover": "MetaMask cannot recover your wallet should you lose it. You can find your Secret Recovery Phrase in Settings > Security & Privacy.",
+    "recover": "IIC S cannot recover your wallet should you lose it. You can find your Secret Recovery Phrase in Settings > Security & Privacy.",
     "learn": "Learn more",
     "done": "Done",
     "recovery_hint": "Recovery hint",
@@ -2513,7 +2513,7 @@
   "phishing": {
     "ethereum_phishing_detection": "Ethereum Phishing Detection",
     "ethereum_phishing_detector": "Ethereum Phishing Detector",
-    "intro": " is currently on the MetaMask domain warning list. This means that based on information available to us, MetaMask believes this domain could currently compromise your security and, as an added safety feature, MetaMask has restricted access to the site. To override this, please read the rest of this warning for instructions on how to continue at your own risk.",
+    "intro": " is currently on the IIC S domain warning list. This means that based on information available to us, IIC S believes this domain could currently compromise your security and, as an added safety feature, IIC S has restricted access to the site. To override this, please read the rest of this warning for instructions on how to continue at your own risk.",
     "reasons": "There are many reasons sites can appear on our warning list, and our warning list compiles from other widely used industry lists. Such reasons can include known fraud or security risks, such as domains that test positive on the ",
     "list_content": "Domains on these warning lists may include outright malicious websites and legitimate websites that have been compromised by a malicious actor.",
     "to_read_more": "To read more about this site ",
@@ -2524,13 +2524,13 @@
     "file_an_issue": "please file an issue.",
     "back_to_safety": "Back to safety",
     "site_might_be_harmful": "This website might be harmful",
-    "metamask_flagged_site": "MetaMask flagged the site you're trying to visit as potentially deceptive. Attackers may trick you into doing something dangerous.",
+    "metamask_flagged_site": "IIC S flagged the site you're trying to visit as potentially deceptive. Attackers may trick you into doing something dangerous.",
     "you_may_proceed_anyway": "You may also",
     "proceed_anyway": "proceed anyway",
     "but_please_do_so_at_your_own_risk": "but please do so at your own risk.",
     "report_detection_problem": "Report a detection problem",
     "share_on_twitter": "If you found this helpful, share on X!",
-    "share_text": "MetaMask protected me from visiting a potentially harmful site: {{url}}. Stay safe!"
+    "share_text": "IIC S protected me from visiting a potentially harmful site: {{url}}. Stay safe!"
   },
   "notifications": {
     "timeout": "Timeout",
@@ -2626,7 +2626,7 @@
     "erc721_received_title": "NFT received",
     "erc1155_sent_title": "NFT sent",
     "erc1155_received_title": "NFT received",
-    "default_message_title": "MetaMask",
+    "default_message_title": "IIC S",
     "default_message_description": "Tap to view",
     "received_payment_title": "Instant payment received",
     "pending_message": "Waiting for confirmation",
@@ -2662,7 +2662,7 @@
       "funds_received_description": "You received {{amount}} {{symbol}}",
       "funds_received_default_description": "You received some tokens",
       "metamask_swap_completed_title": "Swap completed",
-      "metamask_swap_completed_description": "Your MetaMask Swap was successful",
+      "metamask_swap_completed_description": "Your IIC S Swap was successful",
       "nft_sent_title": "NFT sent",
       "nft_sent_description": "You have successfully sent an NFT",
       "nft_received_title": "NFT received",
@@ -2714,7 +2714,7 @@
     "activation_card": {
       "title": "Turn on notifications",
       "description_1": "Stay in the loop on what's happening in your wallet with notifications.",
-      "description_2": "To use this feature, we’ll generate an anonymous ID for your account. It’s used only for syncing your data in MetaMask and doesn't link to your activities or other identifiers, ensuring your privacy.",
+      "description_2": "To use this feature, we’ll generate an anonymous ID for your account. It’s used only for syncing your data in IIC S and doesn't link to your activities or other identifiers, ensuring your privacy.",
       "learn_more": "Learn how we protect your privacy while using this feature.",
       "manage_preferences_1": "You can turn off notifications at any time in ",
       "manage_preferences_2": "Settings > Notifications.",
@@ -2873,7 +2873,7 @@
     "wyre_minimum_deposit": "Minimum deposit is {{amount}}",
     "wyre_maximum_deposit": "Maximum deposit is {{amount}}",
     "apple_pay_purchase": "{{currency}} Purchase",
-    "apple_pay_provider_total_label": "{{provider}} (via MetaMask)",
+    "apple_pay_provider_total_label": "{{provider}} (via IIC S)",
     "buy_with": "Buy with",
     "plus_fee": "Plus a {{fee}} fee",
     "date": "Date",
@@ -2892,12 +2892,12 @@
         "average_gas_fee": "Current average gas fee:",
         "subtitle_1": "If you plan to swap or transfer your {{ticker}}, purchase extra to cover gas fees.",
         "subtitle_2": "Gas fees for transactions are separate from the cost of purchasing {{ticker}}.",
-        "subtitle_3": "MetaMask does not profit from gas fees."
+        "subtitle_3": "IICS does not profit from gas fees."
       },
       "step_2": {
         "title": "What are gas fees?",
         "subtitle_1": "Gas powers transactions on the Ethereum network. It’s a fee paid in {{ticker}} to the crypto miners who process your transactions.",
-        "subtitle_2": "MetaMask does not profit from gas fees.",
+        "subtitle_2": "IICS does not profit from gas fees.",
         "learn_more": "Learn more about gas fees"
       },
       "step_3": {
@@ -2938,7 +2938,7 @@
     "onboarding": {
       "what_to_expect": "What to Expect",
       "quotes": "Our buy crypto feature aggregates quotes from integrated vendors, providing quotes from those sources to get crypto directly into your wallet with no waiting period.",
-      "quotes_sell": "Now you can cash out directly in MetaMask! Get up-to-the-minute quotes from trusted providers while we guide you every step of the way.",
+      "quotes_sell": "Now you can cash out directly in IICS! Get up-to-the-minute quotes from trusted providers while we guide you every step of the way.",
       "benefits": "Fewer gas fees to pay, and numerous networks, tokens, and payment methods supported",
       "benefits_sell": "Off-ramping from crypto to your local currency is now easier than ever.",
       "get_started": "Get started"
@@ -3129,13 +3129,13 @@
       "best_swap": "best swap",
       "across": "across...",
       "want_to_learn_more": "Want to learn more?",
-      "learn_more": "Learn more about MetaMask Swaps",
+      "learn_more": "Learn more about IICS Swaps",
       "what_are": "What are token swaps?",
       "review_audits": "Review our official contracts audit",
       "start_swapping": "Start swapping"
     },
     "feature_off_title": "Temporarily unavailable",
-    "feature_off_body": "MetaMask Swaps is undergoing maintenance. Please check back later.",
+    "feature_off_body": "IICS Swaps is undergoing maintenance. Please check back later.",
     "wrong_network_title": "Swaps not available",
     "wrong_network_body": "You’re only able to swap tokens on the Ethereum Main Network.",
     "unallowed_asset_title": "Can’t swap this token",
@@ -3214,17 +3214,17 @@
     "included": "included",
     "max_gas_fee": "Max gas fee",
     "edit": "Edit",
-    "quotes_include_fee": "Quotes include a {{fee}}% MetaMask fee",
-    "quotes_include_gas_and_metamask_fee": "Quote includes gas and a {{fee}}% MetaMask fee",
+    "quotes_include_fee": "Quotes include a {{fee}}% IICS fee",
+    "quotes_include_gas_and_metamask_fee": "Quote includes gas and a {{fee}}% IICS fee",
     "tap_to_swap": "Tap to Swap",
     "swipe_to_swap": "Swipe to swap",
     "swipe_to": "Swipe to",
     "swap": "Swap",
     "completed_swap": "Swap!",
-    "metamask_swap_fee": "MetaMask Swap fee",
+    "metamask_swap_fee": "IICS Swap fee",
     "fee_text": {
       "fee_is_applied": "The fee of {{fee}} is automatically factored into this quote. You pay it in exchange for a license to use MetaMask's liquidity provider information aggregation software.",
-      "fee_is_not_applied": "MetaMask does not include an additional fee in this quote."
+      "fee_is_not_applied": "IICS does not include an additional fee in this quote."
     },
     "enable": {
       "this_will": "This will",
@@ -3291,7 +3291,7 @@
     "gas_education_1": "Gas fees are paid to crypto miners who process transactions on the ",
     "gas_education_2_ethereum": "Ethereum network.",
     "gas_education_2": "network.",
-    "gas_education_3": "MetaMask does not profit from gas fees.",
+    "gas_education_3": "IICS does not profit from gas fees.",
     "gas_education_4": "The",
     "gas_education_5": "“Estimated gas fee”",
     "gas_education_6": "is what we expect the actual fee to be. The exact amount depends on network conditions.",
@@ -3347,14 +3347,14 @@
     "title": "What's new",
     "blockaid": {
       "title": "Stay safe with security alerts",
-      "description_1": "Steer safe from known scams while still protecting your privacy with security alerts powered by Blockaid. This feature is now on by default for all MetaMask users.",
+      "description_1": "Steer safe from known scams while still protecting your privacy with security alerts powered by Blockaid. This feature is now on by default for all IICS users.",
       "description_2": "Always do your own due diligence before approving requests.",
       "description_3": "Available on Arbitrum, Avalanche, BNB chain, Ethereum Mainnet, Linea, Optimism, Polygon, Sepolia and Base.",
       "got_it": "Got it"
     },
     "sell": {
       "title": "Cashing out made easy",
-      "description": "Sell your crypto directly in MetaMask! We’ll help you find quotes from trusted providers, so you can sell your crypto in an accessible, fast, and secure way, every time.",
+      "description": "Sell your crypto directly in IICS! We’ll help you find quotes from trusted providers, so you can sell your crypto in an accessible, fast, and secure way, every time.",
       "action_text": "Try it out"
     },
     "transaction_simulation": {
@@ -3373,9 +3373,9 @@
   "switch_custom_network": {
     "title_existing_network": "This site would like to switch the network",
     "title_new_network": "New network added",
-    "switch_warning": "This will switch the selected network within MetaMask to a previously added network:",
-    "add_network_and_give_dapp_permission_warning": "You're adding this network to MetaMask and giving {{dapp_origin}} permission to use it.",
-    "update_network_and_give_dapp_permission_warning": "You're updating this network in MetaMask and giving {{dapp_origin}} permission to use it.",
+    "switch_warning": "This will switch the selected network within IICS to a previously added network:",
+    "add_network_and_give_dapp_permission_warning": "You're adding this network to IICS and giving {{dapp_origin}} permission to use it.",
+    "update_network_and_give_dapp_permission_warning": "You're updating this network in IICS and giving {{dapp_origin}} permission to use it.",
     "request_update_network_url": "{{dapp_origin}} is requesting to update your default network URL. You can edit defaults and network information any time.",
     "available": "is now available in the network selector.",
     "cancel": "Cancel",
@@ -3383,8 +3383,8 @@
   },
   "add_custom_network": {
     "title": "Allow this site to add a network?",
-    "warning": "This allows this network to be used within MetaMask.",
-    "warning_subtext_1": "MetaMask does not verify custom networks or their security.",
+    "warning": "This allows this network to be used within IICS.",
+    "warning_subtext_1": "IICS does not verify custom networks or their security.",
     "warning_subtext_2": "Learn about",
     "warning_subtext_3": "scams and network security risks",
     "display_name": "Display name",
@@ -3400,7 +3400,7 @@
     "alert_recommend": "We recommend you",
     "alert_verify": "verify the chain ID",
     "warning_subtext_new": {
-      "1": "MetaMask doesn’t verify custom networks, so only approve networks you trust.",
+      "1": "IICS doesn’t verify custom networks, so only approve networks you trust.",
       "2": "Learn more about network security risks and scams."
     },
     "invalid_rpc_url": "This network URL doesn't match a known provider for this chain ID.",
@@ -3475,7 +3475,7 @@
     "estimated_gas_fee_tooltip_text_1": "Gas fees are paid to crypto miners who process transactions on the",
     "estimated_gas_fee_tooltip_text_2": " Ethereum",
     "estimated_gas_fee_tooltip_text_3": " network.",
-    "estimated_gas_fee_tooltip_text_4": "MetaMask does not profit from gas fees.",
+    "estimated_gas_fee_tooltip_text_4": "IICS does not profit from gas fees.",
     "estimated_gas_fee_tooltip_text_5": "Gas fees are set by the network and fluctuate based on network traffic and transaction complexity.",
     "learn_more": "Learn more about gas fees",
     "legacy_gas_suggestion_tooltip": "This gas fee suggestion is using legacy gas estimation which may be inaccurate."
@@ -3499,7 +3499,7 @@
     "high_fees": "Why are fees so high?",
     "missing_tokens": "I'm missing tokens...",
     "swap_issues": "I'm unable to swap...",
-    "mobile_sentiment": "How do you feel about MetaMask mobile?",
+    "mobile_sentiment": "How do you feel about IICS mobile?",
     "sentiment_good_face": "😁",
     "sentiment_bad_face": "☹️",
     "sentiment_good": "Love it!",
@@ -3549,12 +3549,12 @@
   },
   "remember_me": {
     "enable_remember_me": "Turn on Remember me",
-    "enable_remember_me_description": "When Remember me is on, anyone with access to your phone can access your MetaMask account."
+    "enable_remember_me_description": "When Remember me is on, anyone with access to your phone can access your IICS account."
   },
   "turn_off_remember_me": {
     "title": "Enter your password to turn off Remember me",
     "placeholder": "Password",
-    "description": "If you turn this option off, you'll need your password to unlock MetaMask from now on.",
+    "description": "If you turn this option off, you'll need your password to unlock IICS from now on.",
     "action": "Turn off Remember me"
   },
   "dapp_connect": {
@@ -3566,11 +3566,11 @@
   },
   "automatic_security_checks": {
     "title": "Automatic security checks",
-    "description": "Automatically checking for updates may expose your IP address to GitHub servers. This only indicates that your IP address is using MetaMask. No other information or account addresses are exposed."
+    "description": "Automatically checking for updates may expose your IP address to GitHub servers. This only indicates that your IP address is using IICS. No other information or account addresses are exposed."
   },
   "terms_of_use_modal": {
     "title": "Review our Terms of Use",
-    "terms_of_use_check_description": "I agree to the Terms of Use, which apply to my use of MetaMask and all of its features",
+    "terms_of_use_check_description": "I agree to the Terms of Use, which apply to my use of IICS and all of its features",
     "accept_cta": "Accept",
     "accept_helper_description": "Please scroll to read all sections",
     "agree_cta": "Agree"
@@ -3582,7 +3582,7 @@
   },
   "enable_automatic_security_check_modal": {
     "title": "Automatically check for security updates?",
-    "description": "Automatically checking for updates may expose your IP address to GitHub servers. This only indicates that your IP address is using MetaMask. No other information or account addresses are exposed.",
+    "description": "Automatically checking for updates may expose your IP address to GitHub servers. This only indicates that your IP address is using IICS. No other information or account addresses are exposed.",
     "primary_action": "Enable automatic security checks",
     "secondary_action": "No thanks"
   },
@@ -3635,7 +3635,7 @@
     "new_wallet_needed_create_try_again_action": "Try recovering wallet",
     "new_wallet_needed_description_part_one": "Something's wrong with your wallet, and you'll need to create a new one. Because your accounts are on the blockchain, they're still safe. Only the preferences, saved networks, account names, and related data saved on your device are gone.",
     "new_wallet_needed_description_part_two": "To import your accounts to a new wallet, you'll need your Secret Recovery Phrase. If you don't have your Secret Recovery Phrase, you won't be able to import your accounts.",
-    "new_wallet_needed_description_part_three": "To keep this from happening again, be sure to always keep your MetaMask app and OS updated to the latest version."
+    "new_wallet_needed_description_part_three": "To keep this from happening again, be sure to always keep your IICS app and OS updated to the latest version."
   },
   "srp_security_quiz": {
     "title": "Security quiz",
@@ -3646,7 +3646,7 @@
     "continue": "Continue",
     "of": "of",
     "question_one": {
-      "question": "If you lose your Secret Recovery Phrase, MetaMask...",
+      "question": "If you lose your Secret Recovery Phrase, IICS...",
       "right_answer": "Can’t help you",
       "wrong_answer": "Can get it back for you",
       "right_answer_title": "Right! No one can help get your Secret Recovery Phrase back",
@@ -3671,9 +3671,9 @@
     "bluetooth_off_message": "Please turn on Bluetooth for your device",
     "bluetooth_access_blocked": "Ledger needs Bluetooth access to pair with your mobile device.",
     "bluetooth_access_blocked_message": "If you want to pair your Ledger device using Bluetooth, enable it in Settings & try again.",
-    "location_access_blocked": "MetaMask needs location access permission to pair with your ledger.",
+    "location_access_blocked": "IICS needs location access permission to pair with your ledger.",
     "location_access_blocked_message": "If you want to pair your Ledger device using Bluetooth, you’ll need to enable location access in Settings & try again.",
-    "nearbyDevices_access_blocked": "MetaMask needs nearby devices permission to pair with your Ledger.",
+    "nearbyDevices_access_blocked": "IICS needs nearby devices permission to pair with your Ledger.",
     "nearbyDevices_access_blocked_message": "If you want to pair your Ledger device using Bluetooth, you’ll need to enable nearby devices access in Settings & try again.",
     "bluetooth_scanning_error": "Error while scanning the device",
     "bluetooth_scanning_error_message": "Please make sure your device is unlocked and the Ethereum app is running",
@@ -3713,7 +3713,7 @@
     "unknown_error_message": "An unexpected error occurred. Please try again.",
     "error_occured": "An error occurred",
     "how_to_install_eth_app": "How to install the Ethereum app on a Ledger device",
-    "ledger_account_count": "You are using 1 account from your Ledger with MetaMask Mobile.",
+    "ledger_account_count": "You are using 1 account from your Ledger with IICS Mobile.",
     "open_eth_app": "Please open the Ethereum app",
     "open_eth_app_message_one": "We’ve detected you have the Ethereum app installed but it’s not open, please ",
     "open_eth_app_message_two": "press the two buttons on the device to accept the prompt to open the Ethereum app to continue.",
@@ -3727,7 +3727,7 @@
     "not_supported": "Operation not supported",
     "not_supported_error": "Only version 4 of typed data signing is supported.",
     "error_during_connection": "An unknown error occurred",
-    "error_during_connection_message": "There's been a slight problem connecting your Ledger device, tap 'Retry' below to give this another go. Sometimes this occurs due to the ETH app on your Ledger device being open at the start of the pairing process with MetaMask Mobile.",
+    "error_during_connection_message": "There's been a slight problem connecting your Ledger device, tap 'Retry' below to give this another go. Sometimes this occurs due to the ETH app on your Ledger device being open at the start of the pairing process with IICS Mobile.",
     "how_to_install_eth_webview_title": "How to install the Ethereum App",
     "nonce_too_low": "Nonce too low",
     "nonce_too_low_error": "The set nonce is too low",
@@ -3736,7 +3736,7 @@
     "select_hd_path_description": "If you don't see the accounts you expect, try switching the HD path or current selected network.",
     "ledger_live_path": "Ledger Live",
     "ledger_legacy_path": "Legacy(MEW/MyCrypto)",
-    "ledger_bip44_path": "BIP44(e.g. MetaMask, Trezor)",
+    "ledger_bip44_path": "BIP44(e.g. IICS, Trezor)",
     "ledger_legacy_label": " (legacy)",
     "blind_sign_error": "Blind signing error",
     "blind_sign_error_message": "Blind signing is not enabled on your Ledger device. Please enable it in the settings.",
@@ -3786,7 +3786,7 @@
     "show_display_nft_media_content_5": "Settings > Security and privacy."
   },
   "solana_new_feature_content": {
-    "title": "Solana on MetaMask",
+    "title": "Solana on IICS",
     "create_solana_account": "Create Solana account",
     "not_now": "Not now",
     "view_solana_account": "View Solana account",
@@ -3925,7 +3925,7 @@
     "reward_frequency": "Reward frequency",
     "reward_frequency_tooltip": "Your staked balance updates every {{frequency}} to account for new rewards.",
     "withdrawal_time": "Withdrawal time",
-    "metamask_pool": "MetaMask Pool",
+    "metamask_pool": "IICS Pool",
     "enter_amount": "Enter amount",
     "review": "Review",
     "not_enough_eth": "Not enough ETH",
@@ -3944,7 +3944,7 @@
     "got_it": "Got it",
     "your_balance": "Your balance",
     "stake_your_eth_cta": {
-      "base": "Stake your ETH with MetaMask Pool and earn",
+      "base": "Stake your ETH with IICS Pool and earn",
       "annually": "annually.",
       "learn_more_with_period": "Learn more."
     },
@@ -4025,7 +4025,7 @@
   },
   "default_settings": {
     "title": "Your Wallet is ready",
-    "description": "MetaMask uses default settings to best balance safety and ease of use. Change these settings to further increase your privacy.",
+    "description": "IICS uses default settings to best balance safety and ease of use. Change these settings to further increase your privacy.",
     "learn_more_about_privacy": "Learn more about privacy best practices.",
     "privacy_policy": "Privacy policy",
     "default_settings": "Default Settings",
@@ -4035,17 +4035,17 @@
     "manage_networks_body": "We use Infura as our remote procedure call (RPC) provider to offer the most reliable and private access to Ethereum data we can. You can choose your own RPC, but remember that any RPC will receive your IP address and Ethereum wallet to make transactions. Read our ",
     "manage_networks_body2": " to learn more about how Infura handles data for EVM accounts, for Solana accounts ",
     "manage_networks_body3": "click here.",
-    "functionality_body": "MetaMask offers basic features like token details and gas settings through internet services. When you use internet services, your IP address is shared, in this case with MetaMask. This is just like when you visit any website. MetaMask uses this data temporarily and never sells your data. You can use a VPN or turn off these services, but it may affect your MetaMask experience. Read our ",
+    "functionality_body": "IICS offers basic features like token details and gas settings through internet services. When you use internet services, your IP address is shared, in this case with IICS. This is just like when you visit any website. IICS uses this data temporarily and never sells your data. You can use a VPN or turn off these services, but it may affect your IICS experience. Read our ",
     "functionality_body2": " to learn more.",
     "sheet": {
       "title_off": "Turn off basic functionality",
-      "description_off": "This means you won't fully optimize your time on MetaMask. Basic features (like token details, optimal gas settings, and others) won't be available to you.",
+      "description_off": "This means you won't fully optimize your time on IICS. Basic features (like token details, optimal gas settings, and others) won't be available to you.",
       "description_off2": "Turning this off also disables all features within",
       "description_off2_related_features1": "security and privacy, backup and sync",
       "description_off2_related_features1_and": "and",
       "description_off2_related_features2": "notifications.",
       "title_on": "Turn on basic functionality",
-      "description_on": "To optimize your time on MetaMask, you’ll need to turn on this feature. Basic functions (like token details, optimal gas settings, notifications, and others) are important to the web3 experience.",
+      "description_on": "To optimize your time on IICS, you’ll need to turn on this feature. Basic functions (like token details, optimal gas settings, notifications, and others) are important to the web3 experience.",
       "checkbox_label": "I understand and want to continue",
       "buttons": {
         "cancel": "Cancel",
@@ -4060,7 +4060,7 @@
     "drawer_assets_desc": "Autodetect tokens in your wallet, display NFTs, and get batched account balance updates",
     "drawer_security_title": "Security",
     "drawer_security_desc": "Reduce your chances of joining unsafe networks and protect your accounts",
-    "network_details_check_desc": "MetaMask uses a third-party service called chainid.network to show accurate and standardized network details. This reduces your chances of connecting to malicious or incorrect network. When using this feature, your IP address is exposed to chainid.network."
+    "network_details_check_desc": "IICS uses a third-party service called chainid.network to show accurate and standardized network details. This reduces your chances of connecting to malicious or incorrect network. When using this feature, your IP address is exposed to chainid.network."
   },
   "simulation_details": {
     "failed": "There was an error loading your estimation.",
@@ -4094,7 +4094,7 @@
     },
     "estimated_gas_fee": {
       "title": "Estimated gas fee",
-      "gas_recipient": "Gas fees are paid to crypto miners who process transactions on Ethereum network. Metamask does not profit from gas fees.",
+      "gas_recipient": "Gas fees are paid to crypto miners who process transactions on Ethereum network. IICS does not profit from gas fees.",
       "gas_fluctuation": "Gas fees are estimated and will fluctuate based on network traffic and transaction complexity.",
       "gas_learn_more": "Learn more about gas fees"
     },
@@ -4237,7 +4237,7 @@
     "reject": "Reject the transaction"
   },
   "snap_account_custom_name_approval": {
-    "title": "Add account to MetaMask",
+    "title": "Add account to IICS",
     "input_title": "Account name",
     "add_account_button": "Add account",
     "name_taken_message": "This account name already exists"
@@ -4269,7 +4269,7 @@
     "quote_details": "Quote Details",
     "price_impact": "Price Impact",
     "time": "Time",
-    "quote_info_content": "This quote offers the best return from our search. It’s based on the swap rate, including bridging fees and a 0.875% MetaMask fee, but not gas fees. Gas fees vary with network activity and transaction complexity.",
+    "quote_info_content": "This quote offers the best return from our search. It’s based on the swap rate, including bridging fees and a 0.875% IICS fee, but not gas fees. Gas fees vary with network activity and transaction complexity.",
     "quote_info_title": "Why we recommend this quote",
     "see_other_quotes": "See other quotes",
     "receive_at": "Receive at",
@@ -4312,7 +4312,7 @@
     "enable": {
       "title": "Turn on backup and sync",
       "confirmation": "When you turn on backup and sync, you’re also turning on basic functionality. Do you want to continue?",
-      "description": "Backup and sync lets us store encrypted data for your custom settings and features. This keeps your MetaMask experience the same across devices and restores settings and features if you ever need to reinstall MetaMask. This doesn’t back up your Secret Recovery Phrase.",
+      "description": "Backup and sync lets us store encrypted data for your custom settings and features. This keeps your IICS experience the same across devices and restores settings and features if you ever need to reinstall IICS. This doesn’t back up your Secret Recovery Phrase.",
       "updatePreferences": "You can update your preferences at any time in",
       "settingsPath": "Settings > Backup and sync."
     },
@@ -4371,7 +4371,7 @@
     },
     "delete_account": {
       "title": "Remove Account",
-      "warning_title": "This account will be removed from MetaMask.",
+      "warning_title": "This account will be removed from IICS.",
       "warning_description": "Make sure you have the Secret Recovery Phrase or private key for this account before removing.",
       "remove_button": "Remove",
       "cancel_button": "Cancel",
@@ -4410,13 +4410,13 @@
   },
   "deep_link_modal": {
     "private_link": {
-      "title": "Redirecting you to MetaMask",
+      "title": "Redirecting you to IICS",
       "description": "You'll open {{pageTitle}} if you continue.",
       "checkbox_label": "Don't remind me again"
     },
     "public_link": {
       "title": "Proceed with caution",
-      "description": "You were sent here by a third party, not MetaMask. You'll open {{pageTitle}} if you continue."
+      "description": "You were sent here by a third party, not IICS. You'll open {{pageTitle}} if you continue."
     },
     "invalid": {
       "title": "This page doesn't exist",

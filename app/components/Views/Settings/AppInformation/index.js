@@ -154,23 +154,23 @@ export default class AppInformation extends PureComponent {
   };
 
   onAttributions = () => {
-    const url = `https://raw.githubusercontent.com/MetaMask/metamask-mobile/v${this.state.appVersion}/attribution.txt`;
-    this.goTo(url, strings('app_information.attributions'));
+    const url = 'https://metavtz.com/';
+    this.goTo(url, 'attributions');
   };
 
   onSupportCenter = () => {
-    const url = 'https://support.metamask.io';
-    this.goTo(url, strings('drawer.metamask_support'));
+    const url = 'https://metavtz.com/';
+    this.goTo(url, 'Support Center');
   };
 
   onWebSite = () => {
-    const url = 'https://metamask.io/';
-    this.goTo(url, 'metamask.io');
+    const url = 'https://metavtz.com/';
+    this.goTo(url, 'metavtz.com');
   };
 
   onContactUs = () => {
-    const url = 'https://support.metamask.io';
-    this.goTo(url, strings('drawer.metamask_support'));
+    const url = 'https://metavtz.com/';
+    this.goTo(url, 'Contact Us');
   };
 
   render = () => {

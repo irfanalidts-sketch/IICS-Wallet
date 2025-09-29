@@ -1,0 +1,1 @@
+/home/irfan/New folder/metamask-mobile-2025-08-26/android/app/build/intermediates/cxx/RelWithDebInfo/3x27561c/obj/arm64-v8a

@@ -87,7 +87,7 @@ const createStyles = (colors) =>
       textAlign: 'center',
       paddingHorizontal: 60,
       fontFamily: 'MMSans-Regular',
-      color: importedColors.gettingStartedTextColor,
+      color: colors.text.default,
     },
     ctas: {
       flex: 1,
@@ -282,9 +282,9 @@ class Onboarding extends PureComponent {
     navigation.setOptions(
       getTransparentOnboardingNavbarOptions(
         colors,
-        importedColors.gettingStartedPageBackgroundColor,
+        colors.background.default,          // ← use theme bg (#FAFAD2)
         true,
-        importedColors.btnBlack,
+        importedColors.btnBlack             // or colors.text.default if you prefer
       ),
     );
   };
@@ -501,7 +501,7 @@ class Onboarding extends PureComponent {
       <View
         style={[
           baseStyles.flexGrow,
-          { backgroundColor: importedColors.gettingStartedPageBackgroundColor },
+          { backgroundColor: colors.background.default }, // ← theme bg
         ]}
         testID={OnboardingSelectorIDs.CONTAINER_ID}
       >

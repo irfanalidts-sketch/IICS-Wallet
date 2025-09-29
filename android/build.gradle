@@ -3,7 +3,7 @@
 buildscript {
 
 	ext {
-		buildToolsVersion = "35.0.0"
+		buildToolsVersion = "34.0.0"
 		minSdkVersion = project.hasProperty('minSdkVersion') ? project.getProperty('minSdkVersion') : 24
 		compileSdkVersion = 35
 		targetSdkVersion = 34

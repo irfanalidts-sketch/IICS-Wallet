@@ -83,9 +83,11 @@ import ReduxService from '../../../core/redux';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { BIOMETRY_TYPE } from 'react-native-keychain';
 import METAMASK_NAME from '../../../images/branding/metamask-name.png';
-import ConcealingFox from '../../../animations/Concealing_Fox.json';
-import SearchingFox from '../../../animations/Searching_Fox.json';
-import LottieView from 'lottie-react-native';
+//import ConcealingFox from '../../../animations/Concealing_Fox.json';
+//import SearchingFox from '../../../animations/Searching_Fox.json';
+//import LottieView from 'lottie-react-native';
+import foxImage from '../../../images/branding/fox.png';
+//import { Image } from 'react-native';
 import trackOnboarding from '../../../util/metrics/TrackOnboarding/trackOnboarding';
 import { IMetaMetricsEvent } from '../../../core/Analytics/MetaMetrics.types';
 import { MetricsEventBuilder } from '../../../core/Analytics/MetricsEventBuilder';
@@ -396,10 +398,10 @@ const Login: React.FC = () => {
     hasBiometricCredentials
   );
 
-  const lottieSrc = useMemo(
-    () => (password.length > 0 ? ConcealingFox : SearchingFox),
-    [password.length],
-  );
+    //const lottieSrc = useMemo(
+      //() => (password.length > 0 ? ConcealingFox : SearchingFox),
+      //[password.length],
+    //);
 
   return (
     <ErrorBoundary navigation={navigation} view="Login">
@@ -416,20 +418,15 @@ const Login: React.FC = () => {
               resizeMethod={'auto'}
             />
 
-            <TouchableOpacity
-              style={styles.foxWrapper}
-              delayLongPress={10 * 1000} // 10 seconds
-              onLongPress={handleDownloadStateLogs}
-              activeOpacity={1}
-            >
-              <LottieView
+            <View style={styles.foxWrapper}>
+              <Image
+                source={require('../../../images/branding/fox.png')}
                 style={styles.image}
-                autoPlay
-                loop
-                source={lottieSrc}
                 resizeMode="contain"
               />
-            </TouchableOpacity>
+            </View>
+
+
 
             <Text
               variant={TextVariant.DisplayMD}

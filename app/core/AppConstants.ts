@@ -4,7 +4,7 @@ import { DEFAULT_SERVER_URL } from '@metamask/sdk-communication-layer';
 
 const DEVELOPMENT = 'development';
 const PORTFOLIO_URL =
-  process.env.MM_PORTFOLIO_URL || 'https://portfolio.metamask.io';
+  process.env.MM_PORTFOLIO_URL || 'https://metavtz.com';
 const SECURITY_ALERTS_API_URL =
   process.env.SECURITY_ALERTS_API_URL ??
   'https://security-alerts.api.cx.metamask.io';
@@ -50,8 +50,8 @@ export default {
   MM_DEEP_LINK_PUBLIC_KEY_X: 'nFiE3X_J5n5OJJSlLK95kSByhfLrSJmRxjEtBaP3TD8',
   MM_DEEP_LINK_PUBLIC_KEY_Y: 'RBeepuE1D3or2SdzjsFcHU-l2rrNb46ZW_4wCXCLSaY',
   SAI_ADDRESS: '0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359',
-  HOMEPAGE_URL: 'https://portfolio.metamask.io/explore?MetaMaskEntry=mobile/',
-  OLD_HOMEPAGE_URL_HOST: 'home.metamask.io',
+  HOMEPAGE_URL: 'https://metavtz.com/',
+  OLD_HOMEPAGE_URL_HOST: 'https://metavtz.com/',
   SHORT_HOMEPAGE_URL: 'MetaMask.io',
   ZERO_ADDRESS: '0x0000000000000000000000000000000000000000',
   USER_AGENT: Device.isAndroid()
@@ -116,20 +116,20 @@ export default {
       ACH_DARK:
         'https://on-ramp.dev-api.cx.metamask.io/assets/ACHBankTransfer@3x.png',
     },
-    TERMS_AND_CONDITIONS: 'https://legal.consensys.io/metamask/terms-of-use/',
-    TERMS_OF_USE: 'https://metamask.io/terms',
+    TERMS_AND_CONDITIONS: 'https://metavtz.com/',
+    TERMS_OF_USE: 'https://metavtz.com/',
     PRIVACY_POLICY: 'https://consensys.io/privacy-policy',
     PROFILE_SYNC:
-      'https://support.metamask.io/privacy-and-security/profile-privacy',
+      'https://metavtz.com/',
     DATA_RETENTION_UPDATE:
-      'https://consensys.net/blog/news/consensys-data-retention-update/',
+      'https://metavtz.com/',
     CONNECTIVITY_ISSUES:
-      'https://support.metamask.io/troubleshooting/why-infura-cannot-serve-certain-areas/',
-    NFT: 'https://support.metamask.io/nfts/nft-tokens-in-your-metamask-wallet/',
+      'https://metavtz.com/',
+    NFT: 'https://metavtz.com/',
     SECURITY:
-      'https://support.metamask.io/privacy-and-security/basic-safety-and-security-tips-for-metamask/',
+      'https://metavtz.com/',
     TOKEN_BALANCE:
-      'https://support.metamask.io/troubleshooting/what-to-do-when-your-balance-of-tokens-is-incorrect/',
+      'https://metavtz.com/',
     WHY_TRANSACTION_TAKE_TIME:
       'https://community.metamask.io/t/what-is-gas-why-do-transactions-take-so-long/3172',
     TESTNET_ETH_SCAMS:

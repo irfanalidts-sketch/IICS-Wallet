@@ -1,0 +1,1 @@
+/home/irfan/metamask-mobile/android/app/build/intermediates/cxx/RelWithDebInfo/292b2e1i/obj/x86_64
