@@ -1,4 +1,4 @@
-package io.metamask
+package com.iics.wallet
 
 import android.app.Application
 import android.content.BroadcastReceiver
@@ -72,7 +72,7 @@ class MainApplication : Application(), ShareApplication, ReactApplication {
 
     override fun onCreate() {
         super.onCreate()
-        
+
         // Initialize Branch
         RNBranchModule.getAutoInstance(this)
 
@@ -92,7 +92,7 @@ class MainApplication : Application(), ShareApplication, ReactApplication {
 
         // Initialize SoLoader
         SoLoader.init(this, OpenSourceMergedSoMapping)
-        
+
         if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
             // If you opted-in for the New Architecture, we load the native entry point for this app.
             load()
@@ -105,4 +105,4 @@ class MainApplication : Application(), ShareApplication, ReactApplication {
         super.onConfigurationChanged(newConfig)
         ApplicationLifecycleDispatcher.onConfigurationChanged(this, newConfig)
     }
-} 
+}

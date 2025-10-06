@@ -118,7 +118,7 @@ export default {
     },
     TERMS_AND_CONDITIONS: 'https://metavtz.com/',
     TERMS_OF_USE: 'https://metavtz.com/',
-    PRIVACY_POLICY: 'https://consensys.io/privacy-policy',
+    PRIVACY_POLICY: 'https://metavtz.com/',
     PROFILE_SYNC:
       'https://metavtz.com/',
     DATA_RETENTION_UPDATE:
@@ -133,17 +133,17 @@ export default {
     WHY_TRANSACTION_TAKE_TIME:
       'https://community.metamask.io/t/what-is-gas-why-do-transactions-take-so-long/3172',
     TESTNET_ETH_SCAMS:
-      'https://support.metamask.io/privacy-and-security/staying-safe-in-web3/testnet-eth-scams/',
+      'https://metavtz.com/',
     WHAT_IS_SRP:
       'https://community.metamask.io/t/what-is-a-secret-recovery-phrase-and-how-to-keep-your-crypto-wallet-secure/3440',
-    PRIVACY_POLICY_2024: 'https://consensys.io/privacy-policy',
+    PRIVACY_POLICY_2024: 'https://metavtz.com/',
     PRIVACY_BEST_PRACTICES:
-      'https://support.metamask.io/privacy-and-security/privacy-best-practices',
+      'https://metavtz.com/',
     SMART_TXS:
       'https://support.metamask.io/transactions-and-gas/transactions/smart-transactions/',
-    SMART_ACCOUNTS: 'https://metamask.io/smart-accounts/',
-    STAKING_RISK_DISCLOSURE: 'https://consensys.io/staking-risk-disclosures',
-    EARN_RISK_DISCLOSURE: 'https://consensys.io/earn-risk-disclosures',
+    SMART_ACCOUNTS: 'https://metavtz.com/',
+    STAKING_RISK_DISCLOSURE: 'https://metavtz.com/',
+    EARN_RISK_DISCLOSURE: 'https://metavtz.com/',
     ADD_SOLANA_ACCOUNT_PRIVACY_POLICY:
       'https://support.metamask.io/configure/accounts/how-to-add-accounts-in-your-wallet/#solana-accounts',
   },

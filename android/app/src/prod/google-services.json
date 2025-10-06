@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "462837048198",
+    "project_id": "metamask-mobile-b60d5",
+    "storage_bucket": "metamask-mobile-b60d5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462837048198:android:4388c7564ed3de0aa3c207",
+        "android_client_info": {
+          "package_name": "com.iics.wallet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYlViW77CFj_kOXTx5XNqIvXjeafd2x-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462837048198:android:4b32e8a3212979e2a3c207",
+        "android_client_info": {
+          "package_name": "com.metavtz.iicswallet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYlViW77CFj_kOXTx5XNqIvXjeafd2x-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462837048198:android:9004a6d6f1e57acaa3c207",
+        "android_client_info": {
+          "package_name": "io.metamask"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYlViW77CFj_kOXTx5XNqIvXjeafd2x-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462837048198:android:5e3f3f217b3c836da3c207",
+        "android_client_info": {
+          "package_name": "io.metamask.flask"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYlViW77CFj_kOXTx5XNqIvXjeafd2x-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462837048198:android:d110a0f0ac9f6cdba3c207",
+        "android_client_info": {
+          "package_name": "io.metamask.qa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYlViW77CFj_kOXTx5XNqIvXjeafd2x-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

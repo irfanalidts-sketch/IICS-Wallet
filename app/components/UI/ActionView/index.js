@@ -1,4 +1,6 @@
-import React from 'react';
+// app/components/UI/ActionView/index.js
+
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import StyledButton from '../StyledButton';
 import PropTypes from 'prop-types';
 import {
@@ -7,11 +9,19 @@ import {
   View,
   ActivityIndicator,
   TouchableWithoutFeedback,
+  TouchableOpacity,
+  useColorScheme,
 } from 'react-native';
 import { baseStyles } from '../../../styles/common';
 import { strings } from '../../../../locales/i18n';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { useTheme } from '../../../util/theme';
+
+// MetaMask design-system icon
+import Icon, {
+  IconName,
+  IconSize,
+} from '../../../component-library/components/Icons/Icon';
 
 export const ConfirmButtonState = {
   Error: 'error',
@@ -21,6 +31,9 @@ export const ConfirmButtonState = {
 
 const getStyles = (colors) =>
   StyleSheet.create({
+    root: {
+      flex: 1,
+    },
     actionContainer: {
       flex: 0,
       flexDirection: 'row',
@@ -44,10 +57,29 @@ const getStyles = (colors) =>
       backgroundColor: colors.warning.default,
       borderColor: colors.warning.default,
     },
+
+    // Floating chevron FAB (dark puck; icon color is handled below)
+    fab: {
+      position: 'absolute',
+      right: 16,
+      bottom: 24,
+      width: 44,
+      height: 44,
+      borderRadius: 22,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: 'rgba(0,0,0,0.8)',
+      elevation: 6,
+      shadowColor: '#000',
+      shadowOpacity: 0.3,
+      shadowRadius: 8,
+      shadowOffset: { width: 0, height: 2 },
+    },
   });
 
 /**
- * PureComponent that renders scrollable content above configurable buttons
+ * Scrollable container with action buttons.
+ * Adds a scroll-to-bottom FAB (chevron) that appears when content overflows.
  */
 export default function ActionView({
   cancelTestID,
@@ -71,18 +103,54 @@ export default function ActionView({
   contentContainerStyle,
 }) {
   const { colors } = useTheme();
+  const appearance = useColorScheme(); // 'light' | 'dark' | null
+  const isDark = appearance === 'dark';
+
+  const styles = useMemo(() => getStyles(colors), [colors]);
+
+  // Button labels
   confirmText = confirmText || strings('action_view.confirm');
   cancelText = cancelText || strings('action_view.cancel');
-  const styles = getStyles(colors);
+
+  // --- FAB visibility state ---
+  const scrollRef = useRef(null);
+  const [atBottom, setAtBottom] = useState(false);
+  const [canScroll, setCanScroll] = useState(false);
+
+  const handleScroll = useCallback((e) => {
+    const { layoutMeasurement, contentOffset, contentSize } = e.nativeEvent;
+    const paddingToBottom = 24;
+    const isBottom =
+      layoutMeasurement.height + contentOffset.y >=
+      contentSize.height - paddingToBottom;
+    setAtBottom(isBottom);
+    setCanScroll(contentSize.height > layoutMeasurement.height + 1);
+  }, []);
+
+  const scrollToBottom = useCallback(() => {
+    scrollRef.current?.scrollToEnd({ animated: true });
+  }, []);
+
+  // Choose icon color robustly:
+  // 1) Prefer themed token if present
+  // 2) Otherwise force white in dark / black in light (absolute fallback)
+  const chevronColor =
+    colors?.icon?.default ??
+    (isDark ? '#FFFFFF' : '#111827');
+
+  const showScrollFab = canScroll && !atBottom && !loading;
 
   return (
-    <View style={baseStyles.flexGrow}>
+    <View style={styles.root}>
       <KeyboardAwareScrollView
+        ref={scrollRef}
         style={[baseStyles.flexGrow, style]}
         resetScrollToCoords={{ x: 0, y: 0 }}
         keyboardShouldPersistTaps={keyboardShouldPersistTaps}
         testID={scrollViewTestID}
         contentContainerStyle={contentContainerStyle}
+        onScroll={handleScroll}
+        scrollEventThrottle={16}
       >
         <TouchableWithoutFeedback
           style={baseStyles.flexGrow}
@@ -127,10 +195,7 @@ export default function ActionView({
               disabled={confirmed || confirmDisabled || loading}
             >
               {confirmed || loading ? (
-                <ActivityIndicator
-                  size="small"
-                  color={colors.primary.default}
-                />
+                <ActivityIndicator size="small" color={colors.primary.default} />
               ) : (
                 confirmText
               )}
@@ -138,6 +203,22 @@ export default function ActionView({
           )}
         </View>
       </KeyboardAwareScrollView>
+
+      {/* Scroll-to-bottom FAB */}
+      {showScrollFab ? (
+        <TouchableOpacity
+          accessibilityRole="button"
+          onPress={scrollToBottom}
+          style={styles.fab}
+          testID="actionview-scroll-fab"
+        >
+          <Icon
+            name={IconName.ChevronDown}
+            size={IconSize.Md}
+            color={chevronColor}   // <- white in dark, black in light
+          />
+        </TouchableOpacity>
+      ) : null}
     </View>
   );
 }
@@ -155,82 +236,23 @@ ActionView.defaultProps = {
 };
 
 ActionView.propTypes = {
-  /**
-   * TestID for the cancel button
-   */
   cancelTestID: PropTypes.string,
-  /**
-   * TestID for the confirm button
-   */
   confirmTestID: PropTypes.string,
-  /**
-   * Text to show in the cancel button
-   */
   cancelText: PropTypes.string,
-  /**
-   * Content to display above the action buttons
-   */
   children: PropTypes.node,
-  /**
-   * Type of button to show as the confirm button
-   */
   confirmButtonMode: PropTypes.oneOf(['normal', 'confirm', 'sign']),
-  /**
-   * Text to show in the confirm button
-   */
   confirmText: PropTypes.string,
-  /**
-   * Whether action view was confirmed in order to block any other interaction
-   */
   confirmed: PropTypes.bool,
-  /**
-   * Whether action view confirm button should be disabled
-   */
   confirmDisabled: PropTypes.bool,
-  /**
-   * Called when the cancel button is clicked
-   */
   onCancelPress: PropTypes.func,
-  /**
-   * Called when the confirm button is clicked
-   */
   onConfirmPress: PropTypes.func,
-  /**
-   * Called when the touchable without feedback is clicked
-   */
   onTouchablePress: PropTypes.func,
-
-  /**
-   * Whether cancel button is shown
-   */
   showCancelButton: PropTypes.bool,
-  /**
-   * Whether confirm button is shown
-   */
   showConfirmButton: PropTypes.bool,
-  /**
-   * Loading after confirm
-   */
   loading: PropTypes.bool,
-  /**
-   * Determines if the keyboard should stay visible after a tap
-   */
   keyboardShouldPersistTaps: PropTypes.string,
-  /**
-   * Optional View styles. Applies to scroll view
-   */
   style: PropTypes.object,
-  /**
-   * Optional Confirm button state - this can be Error/Warning/Normal.
-   */
   confirmButtonState: PropTypes.string,
-
-  /**
-   * Optional TestID for the parent scroll View
-   */
   scrollViewTestID: PropTypes.string,
-  /**
-   * Optional View styles. Applies to scroll view
-   */
   contentContainerStyle: PropTypes.object,
 };

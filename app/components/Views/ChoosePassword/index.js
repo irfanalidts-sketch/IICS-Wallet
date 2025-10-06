@@ -683,13 +683,14 @@ class ChoosePassword extends PureComponent {
                     {strings('choose_password.password')}
                   </Label>
                   <TextField
-                    placeholder={strings(
-                      'import_from_seed.enter_strong_password',
-                    )}
+                    placeholder={strings('import_from_seed.enter_strong_password')}
                     secureTextEntry={this.state.showPasswordIndex.includes(0)}
                     value={password}
                     onChangeText={this.onPasswordChange}
-                    placeholderTextColor={colors.text.muted}
+                    placeholderTextColor={
+                      (colors.input && (colors.input.placeholder || colors.input.placeholderText)) ||
+                      '#374151'
+                    }
                     testID={ChoosePasswordSelectorsIDs.NEW_PASSWORD_INPUT_ID}
                     onSubmitEditing={this.jumpToConfirmPassword}
                     autoComplete="new-password"
@@ -710,6 +711,41 @@ class ChoosePassword extends PureComponent {
                       />
                     }
                   />
+
+                  ...
+
+                  <TextField
+                    placeholder={strings('import_from_seed.re_enter_password')}
+                    value={confirmPassword}
+                    onChangeText={this.setConfirmPassword}
+                    secureTextEntry={this.state.showPasswordIndex.includes(1)}
+                    placeholderTextColor={
+                      (colors.input && (colors.input.placeholder || colors.input.placeholderText)) ||
+                      '#374151'
+                    }
+                    testID={ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_INPUT_ID}
+                    accessibilityLabel={ChoosePasswordSelectorsIDs.CONFIRM_PASSWORD_INPUT_ID}
+                    autoComplete="new-password"
+                    onSubmitEditing={this.onPressCreate}
+                    returnKeyType={'done'}
+                    autoCapitalize="none"
+                    keyboardAppearance={themeAppearance}
+                    size={TextFieldSize.Lg}
+                    endAccessory={
+                      <Icon
+                        name={
+                          this.state.showPasswordIndex.includes(1)
+                            ? IconName.Eye
+                            : IconName.EyeSlash
+                        }
+                        size={IconSize.Lg}
+                        color={colors.icon.alternative}
+                        onPress={() => this.toggleShowPassword(1)}
+                      />
+                    }
+                    isDisabled={password === ''}
+                  />
+
                   {Boolean(password) &&
                     password.length < MIN_PASSWORD_LENGTH && (
                       <Text

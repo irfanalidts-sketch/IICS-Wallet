@@ -1,23 +1,15 @@
 // app/util/theme/index.ts
-import React, { useCallback, useContext, useEffect, useState } from 'react';
-import {
-  useColorScheme,
-  StatusBar,
-  ColorSchemeName,
-  Appearance,
-  Platform,
-} from 'react-native';
-import { throttle } from 'lodash';
+import React, { useContext } from 'react';
+import { StatusBar } from 'react-native';
 import { AppThemeKey, Theme } from './models';
-import { useSelector } from 'react-redux';
 import { brandColor } from '@metamask/design-tokens';
-import { customLightTheme, customDarkTheme } from './customTheme';
+import { customLightTheme } from './customTheme';
 import Device from '../device';
 
 // -------- Theme context & mocks --------
 export const ThemeContext = React.createContext<any>(undefined);
 
-// Simple mock for tests/fallback
+// Simple mock for tests/fallback (light-only)
 export const mockTheme = {
   colors: customLightTheme.colors,
   themeAppearance: 'light' as AppThemeKey.light,
@@ -26,58 +18,14 @@ export const mockTheme = {
   brandColors: brandColor,
 };
 
-// -------- Helpers --------
-export const getAssetFromTheme = (
-  appTheme: AppThemeKey,
-  osColorScheme: ColorSchemeName,
-  light: any,
-  dark: any,
-) => {
-  let asset = light;
-  switch (appTheme) {
-    case AppThemeKey.light:
-      asset = light;
-      break;
-    case AppThemeKey.dark:
-      asset = dark;
-      break;
-    case AppThemeKey.os:
-      asset = osColorScheme === 'dark' ? dark : light;
-      break;
-    default:
-      asset = light;
-  }
-  return asset;
-};
-
-// Exported custom hook for OS scheme changes
-export const useColorSchemeCustom = (
-  delay = Platform.select({ android: 0, ios: 350 }),
-): ColorSchemeName => {
-  const [colorScheme, setColorScheme] = useState(Appearance.getColorScheme());
-  const onColorSchemeChange = useCallback(
-    throttle(({ colorScheme }) => setColorScheme(colorScheme), delay, {
-      leading: false,
-    }),
-    [],
-  );
-  useEffect(() => {
-    const l = Appearance.addChangeListener(onColorSchemeChange);
-    return () => {
-      onColorSchemeChange.cancel();
-      l?.remove();
-    };
-  }, []);
-  return colorScheme;
-};
-
 // -------- Hard overrides to keep UI readable on light-golden bg --------
 const APP_BG = '#FAFAD2';      // LightGoldenrodYellow
 const APP_BG_ALT = '#F0F0C0';
 const TEXT_DARK = '#111827';
 const TEXT_DARK_2 = '#374151';
 const ICON_DARK = '#111827';
-const PLACEHOLDER = '#6B7280';
+// DARKER placeholder so it's readable on golden bg
+const PLACEHOLDER = '#374151';
 const BORDER = '#E5E7EB';
 
 const withBg = (c: Theme['colors']): Theme['colors'] => ({
@@ -91,11 +39,12 @@ const withBg = (c: Theme['colors']): Theme['colors'] => ({
 
 const withReadableText = (c: Theme['colors']): Theme['colors'] => ({
   ...c,
+  // ensure all text tokens are dark against light background
   text: {
     ...(c as any).text,
     default: TEXT_DARK,
     alternative: TEXT_DARK_2,
-    // keep any other text tokens but ensure defaults are dark
+    muted: PLACEHOLDER, // <-- many inputs use text.muted for placeholder
   },
   icon: {
     ...(c as any).icon,
@@ -106,9 +55,13 @@ const withReadableText = (c: Theme['colors']): Theme['colors'] => ({
     default: BORDER,
   },
   input: {
-    // ensure inputs don’t show very light placeholders
     ...(c as any).input,
-    placeholderText: PLACEHOLDER,
+    // cover both possible keys used by different input components
+    placeholder: PLACEHOLDER,       // <-- some components read this
+    placeholderText: PLACEHOLDER,   // <-- others read this
+    text: TEXT_DARK,                // typed text color
+    background: APP_BG,             // if the input uses a tokenized bg
+    border: BORDER,
   },
 });
 
@@ -116,67 +69,22 @@ const withReadableText = (c: Theme['colors']): Theme['colors'] => ({
 const applyAppOverrides = (c: Theme['colors']): Theme['colors'] =>
   withReadableText(withBg(c));
 
-// -------- Main theme hook --------
+// -------- Main theme hook (LIGHT-ONLY) --------
 export const useAppTheme = (): Theme => {
-  const osThemeName = useColorSchemeCustom();
-  const appTheme: AppThemeKey = useSelector(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (state: any) => state.user.appTheme,
-  );
-  const themeAppearance = getAssetFromTheme(
-    appTheme,
-    osThemeName,
-    AppThemeKey.light,
-    AppThemeKey.dark,
-  );
+  // Hard-lock to LIGHT regardless of OS / Redux
+  const themeAppearance = AppThemeKey.light;
 
-  let colors: Theme['colors'];
-  let typography: Theme['typography'];
-  let shadows: Theme['shadows'];
+  // Light tokens + app-specific overrides
+  const colors = applyAppOverrides(customLightTheme.colors);
+  const typography = customLightTheme.typography;
+  const shadows = customLightTheme.shadows;
   const brandColors = brandColor;
 
-  const setLightStatusBar = () => {
-    // dark icons over light background
-    StatusBar.setBarStyle('dark-content', true);
-    if (Device.isAndroid()) {
-      StatusBar.setTranslucent(true);
-      StatusBar.setBackgroundColor('transparent');
-    }
-  };
-
-  switch (appTheme) {
-    case AppThemeKey.os: {
-      if (osThemeName === AppThemeKey.dark) {
-        colors = applyAppOverrides(customDarkTheme.colors);
-        typography = customDarkTheme.typography;
-        shadows = customDarkTheme.shadows;
-      } else {
-        colors = applyAppOverrides(customLightTheme.colors);
-        typography = customLightTheme.typography;
-        shadows = customLightTheme.shadows;
-      }
-      setLightStatusBar();
-      break;
-    }
-    case AppThemeKey.light:
-      colors = applyAppOverrides(customLightTheme.colors);
-      typography = customLightTheme.typography;
-      shadows = customLightTheme.shadows;
-      setLightStatusBar();
-      break;
-
-    case AppThemeKey.dark:
-      colors = applyAppOverrides(customDarkTheme.colors);
-      typography = customDarkTheme.typography;
-      shadows = customDarkTheme.shadows;
-      setLightStatusBar();
-      break;
-
-    default:
-      colors = applyAppOverrides(customLightTheme.colors);
-      typography = customLightTheme.typography;
-      shadows = customLightTheme.shadows;
-      setLightStatusBar();
+  // Status bar: dark icons over light background
+  StatusBar.setBarStyle('dark-content', true);
+  if (Device.isAndroid()) {
+    StatusBar.setTranslucent(true);
+    StatusBar.setBackgroundColor('transparent');
   }
 
   return { colors, themeAppearance, typography, shadows, brandColors };
@@ -193,10 +101,8 @@ export const useTheme = (): Theme => {
   return theme;
 };
 
-// Asset helper for FCs
-export const useAssetFromTheme = (light: any, dark: any) => {
-  const osColorScheme = useColorScheme();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const appTheme = useSelector((state: any) => state.user.appTheme);
-  return getAssetFromTheme(appTheme, osColorScheme, light, dark);
+// -------- Assets: always pick LIGHT variant --------
+export const useAssetFromTheme = (light: any, _dark: any) => {
+  // App is light-only now
+  return light;
 };

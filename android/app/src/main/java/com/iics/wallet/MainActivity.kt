@@ -1,4 +1,4 @@
-package io.metamask
+package com.iics.wallet
 
 import android.content.Intent
 import android.os.Build
@@ -92,4 +92,4 @@ class MainActivity : ReactActivity() {
         // because it's doing more than [Activity.moveTaskToBack] in fact.
         super.invokeDefaultOnBackPressed()
     }
-} 
+}

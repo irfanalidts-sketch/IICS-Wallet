@@ -34,17 +34,18 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 /** Android config — explicit versions to avoid “compileSdkVersion not specified” */
 android {
   ndkVersion "26.1.10909125"
-  buildToolsVersion "34.0.0"
-  compileSdkVersion 34
-  namespace "io.metamask"
+  buildToolsVersion "35.0.0"
+  compileSdkVersion 35
+  namespace "com.iics.wallet"
 
   defaultConfig {
-    applicationId "io.metamask"
+    applicationId "com.iics.wallet"
     minSdkVersion 24
-    targetSdkVersion 34
+    targetSdkVersion 35
 
     versionName "7.46.2"
-    versionCode 1891
+    versionCode 1893
+    // ↑ bump this integer by 1 (or more)
 
     testBuildType System.getProperty('testBuildType', 'debug')
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -130,20 +131,19 @@ android {
   productFlavors {
     qa {
       dimension "version"
+      applicationId "com.iics.wallet"
       applicationIdSuffix ".qa"
-      applicationId "io.metamask"
       signingConfig signingConfigs.qa
     }
     prod {
       dimension "version"
-      applicationId "io.metamask"
+      applicationId "com.iics.wallet"
       signingConfig signingConfigs.release
     }
     flask {
       dimension "version"
+      applicationId "com.iics.wallet"
       applicationIdSuffix ".flask"
-      applicationId "io.metamask"
-      // Use the appropriate signing config based on environment
       if (System.getenv("METAMASK_ENVIRONMENT") == 'qa') {
         signingConfig signingConfigs.qa
       } else {
@@ -151,6 +151,8 @@ android {
       }
     }
   }
+
+
 
   buildTypes.each {
     it.buildConfigField 'String', 'foxCode', "\"$System.env.MM_FOX_CODE\""

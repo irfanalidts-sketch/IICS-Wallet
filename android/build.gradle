@@ -2,18 +2,19 @@
 
 buildscript {
 
-	ext {
-		buildToolsVersion = "34.0.0"
-		minSdkVersion = project.hasProperty('minSdkVersion') ? project.getProperty('minSdkVersion') : 24
-		compileSdkVersion = 35
-		targetSdkVersion = 34
-		ndkVersion = "26.1.10909125"
-		bitriseNdkPath = "/usr/local/share/android-sdk/ndk-bundle"
-		kotlin_version = "1.9.25"
-		kotlinVersion = "$kotlin_version"
-		supportLibVersion = "28.0.0"
-	}
-	repositories {
+  ext {
+    buildToolsVersion = "35.0.0"
+    minSdkVersion = project.hasProperty('minSdkVersion') ? project.getProperty('minSdkVersion') : 24
+    compileSdkVersion = 35
+    targetSdkVersion = 35            // ← change this
+    ndkVersion = "26.1.10909125"
+    bitriseNdkPath = "/usr/local/share/android-sdk/ndk-bundle"
+    kotlin_version = "1.9.25"
+    kotlinVersion = "$kotlin_version"
+    supportLibVersion = "28.0.0"
+  }
+
+  repositories {
 		google()
 		mavenCentral()
 	}
