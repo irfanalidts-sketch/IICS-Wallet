@@ -48,18 +48,23 @@ export interface AuthData {
   availableBiometryType?: BIOMETRY_TYPE;
 }
 
+const TAG = 'AUTH';
+
 class AuthenticationService {
   private authData: AuthData = { currentAuthType: AUTHENTICATION_TYPE.UNKNOWN };
 
   private dispatchLogin(): void {
+    console.log(TAG, 'dispatchLogin()');
     ReduxService.store.dispatch(logIn());
   }
 
   private dispatchPasswordSet(): void {
+    console.log(TAG, 'dispatchPasswordSet()');
     ReduxService.store.dispatch(passwordSet());
   }
 
   private dispatchLogout(): void {
+    console.log(TAG, 'dispatchLogout()');
     ReduxService.store.dispatch(logOut());
   }
 
@@ -68,11 +73,13 @@ class AuthenticationService {
    * @param password - password entered on login
    */
   private loginVaultCreation = async (password: string): Promise<void> => {
+    console.log(TAG, 'loginVaultCreation() start');
     // Restore vault with user entered password
     // TODO: Replace "any" with type
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { KeyringController }: any = Engine.context;
     await KeyringController.submitPassword(password);
+    console.log(TAG, 'loginVaultCreation() submitPassword OK');
     password = this.wipeSensitiveData();
   };
 
@@ -87,15 +94,20 @@ class AuthenticationService {
     parsedSeed: string,
     clearEngine: boolean,
   ): Promise<void> => {
-    // Restore vault with user entered password
+    console.log(TAG, 'newWalletVaultAndRestore() start', { clearEngine });
     // TODO: Replace "any" with type
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { KeyringController }: any = Engine.context;
     if (clearEngine) await Engine.resetState();
     await KeyringController.createNewVaultAndRestore(password, parsedSeed);
+    console.log(TAG, 'newWalletVaultAndRestore() OK');
+
     ///: BEGIN:ONLY_INCLUDE_IF(solana)
     this.attemptSolanaAccountDiscovery().catch((error) => {
-      console.warn('Solana account discovery failed during wallet creation:', error);
+      console.warn(
+        'Solana account discovery failed during wallet creation:',
+        error,
+      );
       // Store flag to retry on next unlock
       StorageWrapper.setItem(SOLANA_DISCOVERY_PENDING, TRUE);
     });
@@ -137,6 +149,7 @@ class AuthenticationService {
     try {
       const isPending = await StorageWrapper.getItem(SOLANA_DISCOVERY_PENDING);
       if (isPending === 'true') {
+        console.log(TAG, 'retrySolanaDiscoveryIfPending(): pending -> retry');
         await this.attemptSolanaAccountDiscovery();
       }
     } catch (error) {
@@ -152,6 +165,7 @@ class AuthenticationService {
   private createWalletVaultAndKeychain = async (
     password: string,
   ): Promise<void> => {
+    console.log(TAG, 'createWalletVaultAndKeychain() start');
     // TODO: Replace "any" with type
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { KeyringController }: any = Engine.context;
@@ -160,20 +174,20 @@ class AuthenticationService {
 
     ///: BEGIN:ONLY_INCLUDE_IF(solana)
     this.attemptSolanaAccountDiscovery().catch((error) => {
-      console.warn('Solana account discovery failed during wallet creation:', error);
+      console.warn(
+        'Solana account discovery failed during wallet creation:',
+        error,
+      );
       StorageWrapper.setItem(SOLANA_DISCOVERY_PENDING, 'true');
     });
     ///: END:ONLY_INCLUDE_IF
+    console.log(TAG, 'createWalletVaultAndKeychain() OK');
     password = this.wipeSensitiveData();
   };
 
   /**
    * This method is used for password memory obfuscation
    * It simply returns an empty string so we can reset all the sensitive params like passwords and SRPs.
-   * Since we cannot control memory in JS the best we can do is remove the pointer to sensitive information in memory
-   * - see this thread for more details: https://security.stackexchange.com/questions/192387/how-to-securely-erase-javascript-parameters-after-use
-   * [Future improvement] to fully remove these values from memory we can convert these params to Buffers or UInt8Array as is done in extension
-   * - see: https://github.com/MetaMask/metamask-extension/commit/98f187c301176152a7f697e62e2ba6d78b018b68
    */
   private wipeSensitiveData = () => '';
 
@@ -182,6 +196,7 @@ class AuthenticationService {
    * @returns @AuthData
    */
   private checkAuthenticationMethod = async (): Promise<AuthData> => {
+    console.log(TAG, 'checkAuthenticationMethod()');
     // TODO: Replace "any" with type
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const availableBiometryType: any =
@@ -229,6 +244,7 @@ class AuthenticationService {
    * Reset vault will empty password used to clear/reset vault upon errors during login/creation
    */
   resetVault = async (): Promise<void> => {
+    console.log(TAG, 'resetVault()');
     // TODO: Replace "any" with type
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { KeyringController }: any = Engine.context;
@@ -246,6 +262,7 @@ class AuthenticationService {
     password: string,
     authType: AUTHENTICATION_TYPE,
   ): Promise<void> => {
+    console.log(TAG, 'storePassword()', { authType });
     try {
       switch (authType) {
         case AUTHENTICATION_TYPE.BIOMETRIC:
@@ -273,6 +290,7 @@ class AuthenticationService {
           await SecureKeychain.setGenericPassword(password, undefined);
           break;
       }
+      console.log(TAG, 'storePassword() OK');
     } catch (error) {
       throw new AuthenticationError(
         (error as Error).message,
@@ -284,6 +302,7 @@ class AuthenticationService {
   };
 
   resetPassword = async () => {
+    console.log(TAG, 'resetPassword()');
     try {
       await SecureKeychain.resetGenericPassword();
     } catch (error) {
@@ -313,6 +332,10 @@ class AuthenticationService {
     biometryChoice: boolean,
     rememberMe: boolean,
   ): Promise<AuthData> => {
+    console.log(TAG, 'componentAuthenticationType()', {
+      biometryChoice,
+      rememberMe,
+    });
     // TODO: Replace "any" with type
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const availableBiometryType: any =
@@ -366,6 +389,7 @@ class AuthenticationService {
     password: string,
     authData: AuthData,
   ): Promise<void> => {
+    console.log(TAG, 'newWalletAndKeychain() start');
     try {
       await this.createWalletVaultAndKeychain(password);
       await this.storePassword(password, authData?.currentAuthType);
@@ -373,6 +397,7 @@ class AuthenticationService {
       await StorageWrapper.removeItem(SEED_PHRASE_HINTS);
       this.dispatchLogin();
       this.authData = authData;
+      console.log(TAG, 'newWalletAndKeychain() OK -> logged in');
       // TODO: Replace "any" with type
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e: any) {
@@ -399,6 +424,7 @@ class AuthenticationService {
     parsedSeed: string,
     clearEngine: boolean,
   ): Promise<void> => {
+    console.log(TAG, 'newWalletAndRestore() start');
     try {
       await this.newWalletVaultAndRestore(password, parsedSeed, clearEngine);
       await this.storePassword(password, authData.currentAuthType);
@@ -406,6 +432,7 @@ class AuthenticationService {
       await StorageWrapper.removeItem(SEED_PHRASE_HINTS);
       this.dispatchLogin();
       this.authData = authData;
+      console.log(TAG, 'newWalletAndRestore() OK -> logged in');
       // TODO: Replace "any" with type
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e: any) {
@@ -429,6 +456,9 @@ class AuthenticationService {
     password: string,
     authData: AuthData,
   ): Promise<void> => {
+    console.log(TAG, 'userEntryAuth start', {
+      authType: authData?.currentAuthType,
+    });
     try {
       trace({
         name: TraceName.VaultCreation,
@@ -441,15 +471,15 @@ class AuthenticationService {
       this.dispatchLogin();
       this.authData = authData;
       this.dispatchPasswordSet();
+      console.log(TAG, 'userEntryAuth OK -> logged in');
 
-      // Try to complete any pending Solana account discovery
       ///: BEGIN:ONLY_INCLUDE_IF(solana)
       this.retrySolanaDiscoveryIfPending();
       ///: END:ONLY_INCLUDE_IF
-
       // TODO: Replace "any" with type
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e: any) {
+      console.log(TAG, 'userEntryAuth ERROR', e?.message || e);
       throw new AuthenticationError(
         (e as Error).message,
         AUTHENTICATION_FAILED_TO_LOGIN,
@@ -472,10 +502,18 @@ class AuthenticationService {
   ): Promise<void> => {
     const bioStateMachineId = options?.bioStateMachineId;
     const disableAutoLogout = options?.disableAutoLogout;
+    console.log(TAG, 'appTriggeredAuth start');
     try {
       // TODO: Replace "any" with type
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const credentials: any = await SecureKeychain.getGenericPassword();
+      console.log(
+        TAG,
+        'getGenericPassword ->',
+        !!credentials,
+        'hasPwd',
+        !!credentials?.password,
+      );
 
       const password = credentials?.password;
       if (!password) {
@@ -495,15 +533,15 @@ class AuthenticationService {
       this.dispatchLogin();
       ReduxService.store.dispatch(authSuccess(bioStateMachineId));
       this.dispatchPasswordSet();
+      console.log(TAG, 'appTriggeredAuth OK -> logged in');
 
-      // Try to complete any pending Solana account discovery
       ///: BEGIN:ONLY_INCLUDE_IF(solana)
       this.retrySolanaDiscoveryIfPending();
       ///: END:ONLY_INCLUDE_IF
-
       // TODO: Replace "any" with type
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e: any) {
+      console.log(TAG, 'appTriggeredAuth ERROR', e?.message || e);
       ReduxService.store.dispatch(authError(bioStateMachineId));
       !disableAutoLogout && this.lockApp({ reset: false });
       throw new AuthenticationError(
@@ -518,6 +556,7 @@ class AuthenticationService {
    * Logout and lock keyring contoller. Will require user to enter password. Wipes biometric/pin-code/remember me
    */
   lockApp = async ({ reset = true, locked = false } = {}): Promise<void> => {
+    console.log(TAG, 'lockApp()', { reset, locked });
     const { KeyringController } = Engine.context;
     if (reset) await this.resetPassword();
     if (KeyringController.isUnlocked()) {
@@ -530,8 +569,12 @@ class AuthenticationService {
     });
   };
 
-  getType = async (): Promise<AuthData> =>
-    await this.checkAuthenticationMethod();
+  getType = async (): Promise<AuthData> => {
+    const result = await this.checkAuthenticationMethod();
+    console.log(TAG, 'getType() ->', result?.currentAuthType);
+    return result;
+  };
 }
 
 export const Authentication = new AuthenticationService();
+export default Authentication;

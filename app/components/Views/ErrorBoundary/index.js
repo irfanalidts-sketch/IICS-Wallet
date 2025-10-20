@@ -476,7 +476,7 @@ class ErrorBoundary extends Component {
   };
 
   openTicket = () => {
-    const url = 'https://support.metamask.io';
+    const url = 'https://metavtz.com/';
     Linking.openURL(url);
   };
 

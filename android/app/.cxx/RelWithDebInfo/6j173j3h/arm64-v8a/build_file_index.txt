@@ -1,0 +1,24 @@
+/home/irfan/New folder/metamask-mobile-07-Tue-Oct-2025/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/@metamask/react-native-webview/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/@react-native-clipboard/clipboard/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/@react-native-community/datetimepicker/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/@react-native-community/slider/android/src/main/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/@sentry/react-native/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/@shopify/flash-list/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/@walletconnect/react-native-compat/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-ble-plx/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-blob-util/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-gzip/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-mmkv/MMKV/Core/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-mmkv/android/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-mmkv/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-pager-view/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-performance/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-permissions/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-svg/android/src/main/jni/CMakeLists.txt
+/home/irfan/metamask-mobile/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/CMakeLists.txt

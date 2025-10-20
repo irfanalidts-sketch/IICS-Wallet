@@ -154,13 +154,13 @@ const Settings = () => {
       ).build(),
     );
     goToBrowserUrl(
-      'https://community.metamask.io/c/feature-requests-ideas/',
+      'https://metavtz.com/',
       strings('app_settings.request_feature'),
     );
   };
 
   const showHelp = () => {
-    let supportUrl = 'https://support.metamask.io';
+    let supportUrl = 'https://metavtz.com/';
 
     ///: BEGIN:ONLY_INCLUDE_IF(beta)
     supportUrl = 'https://intercom.help/internal-beta-testing/en/';
