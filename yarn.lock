@@ -11801,10 +11801,10 @@
   resolved "https://registry.yarnpkg.com/@wix-pilot/detox/-/detox-1.0.11.tgz#d21fc93f46980d36643413a58675cc77a276513f"
   integrity sha512-oCeYz7EhcWOyp0KbaJ3hipMbZ+nWuZ7Pvjno3sUzP1EebrZBZoRoDp16JZMR6H+i+h8OdqkrviI0mR2mYFZzMg==
 
-"@xmldom/xmldom@^0.8.10", "@xmldom/xmldom@^0.8.8":
-  version "0.8.10"
-  resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.8.10.tgz#a1337ca426aa61cef9fe15b5b28e340a72f6fa99"
-  integrity sha512-2WALfTl4xo2SkGCYRt6rDTFfk9R1czmBvUQy12gK2KuRKIpWEhcbbzy8EZXtz/jkRqHX8bFEc6FC1HjX4TUWYw==
+"@xmldom/xmldom@^0.8.11", "@xmldom/xmldom@^0.8.8":
+  version "0.8.11"
+  resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.8.11.tgz#b79de2d67389734c57c52595f7a7305e30c2d608"
+  integrity sha512-cQzWCtO6C8TQiYl1ruKNn2U6Ao4o4WBBcbL61yJl84x+j5sOWWFU9X7DpND8XZG3daDppSsigMdfAIl2upQBRw==
 
 "@xmldom/xmldom@~0.7.7":
   version "0.7.13"
