@@ -52,7 +52,7 @@ export default {
   SAI_ADDRESS: '0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359',
   HOMEPAGE_URL: 'https://metavtz.com/',
   OLD_HOMEPAGE_URL_HOST: 'https://metavtz.com/',
-  SHORT_HOMEPAGE_URL: 'MetaMask.io',
+  SHORT_HOMEPAGE_URL: 'metavtz.com',
   ZERO_ADDRESS: '0x0000000000000000000000000000000000000000',
   USER_AGENT: Device.isAndroid()
     ? 'Mozilla/5.0 (Linux; Android 10; Android SDK built for x86 Build/OSM1.180201.023) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.92 Mobile Safari/537.36'
@@ -145,7 +145,7 @@ export default {
     STAKING_RISK_DISCLOSURE: 'https://metavtz.com/',
     EARN_RISK_DISCLOSURE: 'https://metavtz.com/',
     ADD_SOLANA_ACCOUNT_PRIVACY_POLICY:
-      'https://support.metamask.io/configure/accounts/how-to-add-accounts-in-your-wallet/#solana-accounts',
+      'https://metavtz.com/',
   },
   DECODING_API_URL:
     process.env.DECODING_API_URL ||

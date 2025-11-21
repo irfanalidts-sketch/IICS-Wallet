@@ -1,3 +1,4 @@
+//below code is from \\wsl.localhost\Ubuntu-22.04\home\irfan\New folder\JustWallet\app\constants\network.js
 import { NetworkType, toHex } from '@metamask/controller-utils';
 
 export const INFURA_PROJECT_ID = process.env.MM_INFURA_PROJECT_ID;

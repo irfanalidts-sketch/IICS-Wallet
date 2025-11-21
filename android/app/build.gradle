@@ -44,7 +44,7 @@ android {
     targetSdkVersion 35
 
     versionName "7.46.2"
-    versionCode 1893
+    versionCode 1898
     // ↑ bump this integer by 1 (or more)
 
     testBuildType System.getProperty('testBuildType', 'debug')

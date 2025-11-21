@@ -33,6 +33,7 @@ const monadTestnetLogo = require('../../images/monad-testnet-logo.png');
 
 /* eslint-enable */
 import {
+
   PopularList,
   UnpopularNetworkList,
   CustomNetworkImgMapping,
@@ -101,6 +102,18 @@ export const NetworkList = {
     imageSource: lineaMainnetLogo,
     blockExplorerUrl: LINEA_MAINNET_BLOCK_EXPLORER,
   },
+    iicMainnet: {
+      name: 'IIC Main Network',
+      shortName: 'IIC',
+      networkId: 1650,
+      chainId: toHex('1650'),
+      ticker: 'SAYA',
+      color: '#6b4eff',
+      networkType: 'iic-mainnet',
+      imageSource: require('../../images/saya-coin.png'),
+      blockExplorerUrl: 'http://3.149.173.164:3000/',
+    },
+
   [SEPOLIA]: {
     name: 'Sepolia',
     shortName: 'Sepolia',
@@ -650,6 +663,7 @@ export const WHILELIST_NETWORK_NAME = {
   [ChainId['linea-mainnet']]: 'Linea Mainnet',
   [ChainId['megaeth-testnet']]: 'Mega Testnet',
   [ChainId['monad-testnet']]: 'Monad Testnet',
+  [toHex('1650')]: 'IIC Main Network',
 };
 
 /**

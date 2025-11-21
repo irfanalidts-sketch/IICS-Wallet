@@ -1,3 +1,4 @@
+//below code is from \\wsl.localhost\Ubuntu-22.04\home\irfan\New folder\JustWallet\app\component-library\components\Navigation\TabBar\TabBar.tsx
 /* eslint-disable react/prop-types */
 
 // Third party dependencies.
@@ -13,6 +14,7 @@ import { useTheme } from '../../../../util/theme';
 import { MetaMetricsEvents } from '../../../../core/Analytics';
 import { getDecimalChainId } from '../../../../util/networks';
 import { useMetrics } from '../../../../components/hooks/useMetrics';
+import { Linking } from 'react-native';
 
 // Internal dependencies.
 import { TabBarProps } from './TabBar.types';
@@ -29,6 +31,12 @@ const TabBar = ({ state, descriptors, navigation }: TabBarProps) => {
   const { bottom: bottomInset } = useSafeAreaInsets();
   const { styles } = useStyles(styleSheet, { bottomInset });
   const chainId = useSelector(selectChainId);
+  // Get currently selected wallet address from Metamask Redux store
+  const selectedAddress = useSelector(
+    (state: any) =>
+      state.engine.backgroundState.PreferencesController.selectedAddress
+  );
+
   const tabBarRef = useRef(null);
   /**
    * Current onboarding wizard step
@@ -87,9 +95,21 @@ const TabBar = ({ state, descriptors, navigation }: TabBarProps) => {
               screen: Routes.BROWSER_VIEW,
             });
             break;
-          case Routes.TRANSACTIONS_VIEW:
-            navigation.navigate(Routes.TRANSACTIONS_VIEW);
-            break;
+
+            case Routes.TRANSACTIONS_VIEW:
+              if (selectedAddress) {
+                const explorerUrl = `https://scan.iic-blockchain.com/address/${selectedAddress}?tab=txs`;
+                navigation.navigate("Webview", {
+                  screen: "SimpleWebview",
+                  params: { url: explorerUrl },
+                });
+
+              }
+              return; // Stop navigation to internal Activity page
+
+          //case Routes.TRANSACTIONS_VIEW:
+            //navigation.navigate(Routes.TRANSACTIONS_VIEW);
+            //break;
           case Routes.SETTINGS_VIEW:
             navigation.navigate(Routes.SETTINGS_VIEW, {
               screen: 'Settings',

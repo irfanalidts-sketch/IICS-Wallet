@@ -117,7 +117,7 @@ class ProtectYourWalletModal extends PureComponent {
     this.props.navigation.navigate('Webview', {
       screen: 'SimpleWebview',
       params: {
-        url: 'https://support.metamask.io/privacy-and-security/basic-safety-and-security-tips-for-metamask/',
+        url: 'https://metavtz.com/',
         title: strings('protect_wallet_modal.title'),
       },
     });

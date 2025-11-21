@@ -1,3 +1,4 @@
+//below code is from \\wsl.localhost\Ubuntu-22.04\home\irfan\New folder\JustWallet\app\core\Multichain\constants.ts
 import { CaipChainId } from '@metamask/utils';
 import {
   BtcAccountType,

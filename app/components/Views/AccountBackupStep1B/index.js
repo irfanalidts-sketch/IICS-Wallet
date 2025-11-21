@@ -240,8 +240,8 @@ const AccountBackupStep1B = (props) => {
     props.navigation.navigate('Webview', {
       screen: 'SimpleWebview',
       params: {
-        url: 'https://support.metamask.io/privacy-and-security/basic-safety-and-security-tips-for-metamask/',
-        title: strings('drawer.metamask_support'),
+        url: 'https://metavtz.com/',
+        title: strings('drawer.metaVTZ_support'),
       },
     });
   };

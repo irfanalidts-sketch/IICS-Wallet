@@ -1,3 +1,4 @@
+//below code is from \\wsl.localhost\Ubuntu-22.04\home\irfan\New folder\JustWallet\app\core\Multichain\utils.ts
 import { toChecksumHexAddress } from '@metamask/controller-utils';
 import { InternalAccount } from '@metamask/keyring-internal-api';
 import {

@@ -1,3 +1,4 @@
+//below code is from \\wsl.localhost\Ubuntu-22.04\home\irfan\New folder\JustWallet\app\components\Nav\Main\MainNavigator.js
 import React, { useRef, useState, useEffect } from 'react';
 import { Image, StyleSheet, Keyboard, Platform } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';

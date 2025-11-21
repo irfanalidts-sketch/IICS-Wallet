@@ -519,8 +519,8 @@ class ResetPassword extends PureComponent {
     this.props.navigation.push('Webview', {
       screen: 'SimpleWebview',
       params: {
-        url: 'https://support.metamask.io/managing-my-wallet/resetting-deleting-and-restoring/how-can-i-reset-my-password/',
-        title: 'support.metamask.io',
+        url: 'https://metavtz.com/',
+        title: 'supportMetaVTZ',
       },
     });
   };

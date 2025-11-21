@@ -564,7 +564,7 @@ class ChoosePassword extends PureComponent {
 
   learnMore = () => {
     const learnMoreUrl =
-      'https://support.metamask.io/managing-my-wallet/resetting-deleting-and-restoring/how-can-i-reset-my-password/';
+      'https://metavtz.com/';
     this.track(MetaMetricsEvents.EXTERNAL_LINK_CLICKED, {
       text: 'Learn More',
       location: 'choose_password',
@@ -574,7 +574,7 @@ class ChoosePassword extends PureComponent {
       screen: 'SimpleWebview',
       params: {
         url: learnMoreUrl,
-        title: 'support.metamask.io',
+        title: 'MetaVTZ Support',
       },
     });
   };
@@ -714,6 +714,7 @@ class ChoosePassword extends PureComponent {
 
                   ...
 
+                  {/*
                   <TextField
                     placeholder={strings('import_from_seed.re_enter_password')}
                     value={confirmPassword}
@@ -745,6 +746,8 @@ class ChoosePassword extends PureComponent {
                     }
                     isDisabled={password === ''}
                   />
+                  */}
+
 
                   {Boolean(password) &&
                     password.length < MIN_PASSWORD_LENGTH && (

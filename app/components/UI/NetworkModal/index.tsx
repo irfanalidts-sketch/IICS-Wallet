@@ -1,3 +1,4 @@
+//below code is from \\wsl.localhost\Ubuntu-22.04\home\irfan\New folder\ReleaseWallet\app\components\UI\NetworkModal\index.tsx
 import Modal from 'react-native-modal';
 import React, { useCallback, useEffect } from 'react';
 import { View } from 'react-native';
@@ -467,17 +468,50 @@ const NetworkModals = (props: NetworkProps) => {
               <View style={styles.notch} />
             </View>
 
-            <View style={styles.root}>
-              <NetworkVerificationInfo
-                customNetworkInformation={customNetworkInformation}
-                onReject={() => {
-                  onReject?.();
-                  onClose();
-                }}
-                onConfirm={addNetwork}
-                isCustomNetwork={!showPopularNetworkModal}
-              />
-            </View>
+            {/* Disable warnings only for IIC Mainnet */}
+            {chainId === '0x672' || chainId === '1650' ? (
+              <View style={styles.root}>
+                {/* Minimal clean UI */}
+                <Text style={styles.title}>{nickname}</Text>
+
+                <Text>Currency symbol: {ticker}</Text>
+                <Text>RPC URL: {rpcUrl}</Text>
+
+                <View style={styles.actionContainer}>
+                  <BottomSheetFooter
+                    buttonsAlignment={ButtonsAlignment.Horizontal}
+                    buttonPropsArray={[
+                      {
+                        variant: ButtonVariants.Secondary,
+                        label: strings('accountApproval.cancel'),
+                        size: ButtonSize.Lg,
+                        onPress: onClose,
+                      },
+                      {
+                        variant: ButtonVariants.Primary,
+                        label: strings('enter_password.confirm_button'),
+                        size: ButtonSize.Lg,
+                        onPress: addNetwork,
+                      },
+                    ]}
+                  />
+                </View>
+              </View>
+            ) : (
+              // original UI for other networks
+              <View style={styles.root}>
+                <NetworkVerificationInfo
+                  customNetworkInformation={customNetworkInformation}
+                  onReject={() => {
+                    onReject?.();
+                    onClose();
+                  }}
+                  onConfirm={addNetwork}
+                  isCustomNetwork={!showPopularNetworkModal}
+                />
+              </View>
+            )}
+
           </View>
         )}
       </View>

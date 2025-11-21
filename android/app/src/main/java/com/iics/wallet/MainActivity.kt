@@ -1,3 +1,5 @@
+//below code is from \\wsl.localhost\Ubuntu-22.04\home\irfan\New folder\Wallet\android\app\src\main\java\com\iics\wallet\MainActivity.kt
+
 package com.iics.wallet
 
 import android.content.Intent

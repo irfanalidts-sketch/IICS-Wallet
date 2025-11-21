@@ -1,3 +1,4 @@
+//below code is from \\wsl.localhost\Ubuntu-22.04\home\irfan\New folder\JustWallet\app\core\Multichain\networks.ts
 import { isEvmAccountType } from '@metamask/keyring-api';
 import {
   getBlockExplorerName,

@@ -1,3 +1,4 @@
+//below code is from \\wsl.localhost\Ubuntu-22.04\home\irfan\New folder\ReleaseWallet\app\core\RPCMethods\networkChecker.util.ts
 import axios from 'axios';
 import { BannerAlertSeverity } from '../../component-library/components/Banners/Banner';
 import { strings } from '../../../locales/i18n';
@@ -29,6 +30,18 @@ const checkSafeNetwork = async (
   nickname: string,
   ticker: string,
 ) => {
+    // ---- IIC CUSTOM NETWORK WHITELIST ----
+    // chainIdDecimal = "1650"
+    // rpcUrl = "https://iic-blockchain.com"
+    if (
+      chainIdDecimal === '1650' ||
+      chainIdDecimal === '0x672' ||
+      rpcUrl.includes('iic-blockchain.com')
+    ) {
+      return []; // skip all warnings for IIC chain
+    }
+    // --------------------------------------
+
   const alerts = [];
   const EVM_NATIVE_TOKEN_DECIMALS = 18;
 

@@ -1,0 +1,1 @@
+/home/irfan/New folder/ReleaseWallet/android/app/build/intermediates/cxx/RelWithDebInfo/4z5g3112/obj/arm64-v8a
