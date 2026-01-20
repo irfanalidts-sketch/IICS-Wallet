@@ -1,4 +1,4 @@
-//below code is from \\wsl.localhost\Ubuntu-22.04\home\irfan\New folder\ReleaseWallet\app\util\networks\customNetworks.tsx
+///home/irfan/ReleaseWallet/app/util/networks/customNetworks.tsx
 import { CaipChainId, Hex } from '@metamask/utils';
 import { toHex } from '@metamask/controller-utils';
 import { CHAIN_IDS } from '@metamask/transaction-controller';
@@ -34,8 +34,8 @@ export const PopularList = [
 
   {
         chainId: toHex('1650'),
-        nickname: 'IIC Main Network',
-        rpcUrl: 'https://iic-blockchain.com',
+        nickname: 'IIC BlockChain',
+        rpcUrl: 'https://rpc.iic-blockchain.com/',
         ticker: 'SAYA',
         rpcPrefs: {
           blockExplorerUrl: 'http://3.149.173.164:3000/',

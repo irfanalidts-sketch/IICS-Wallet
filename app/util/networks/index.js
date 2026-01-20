@@ -1,3 +1,4 @@
+//below code is from /home/irfan/ReleaseWallet/app/util/networks/index.js
 import URL from 'url-parse';
 import networksWithImages from 'images/image-icons';
 import {

@@ -1,3 +1,4 @@
+///home/irfan/WalletOTP/app/actions/user/types.ts
 import { type AppThemeKey } from '../../util/theme/models';
 import { type Action } from 'redux';
 
@@ -24,6 +25,10 @@ export enum UserActionType {
   SET_APP_THEME = 'SET_APP_THEME',
   CHECKED_AUTH = 'CHECKED_AUTH',
   SET_APP_SERVICES_READY = 'SET_APP_SERVICES_READY',
+  SET_REGISTRATION_UNREGISTERED = 'SET_REGISTRATION_UNREGISTERED',
+  SET_REGISTRATION_REGISTERED_UNVERIFIED = 'SET_REGISTRATION_REGISTERED_UNVERIFIED',
+  SET_REGISTRATION_REGISTERED_VERIFIED = 'SET_REGISTRATION_REGISTERED_VERIFIED',
+
 }
 
 // User actions
@@ -89,6 +94,16 @@ export type CheckedAuthAction = Action<UserActionType.CHECKED_AUTH> & {
 export type SetAppServicesReadyAction =
   Action<UserActionType.SET_APP_SERVICES_READY>;
 
+export type SetRegistrationUnregisteredAction =
+  Action<UserActionType.SET_REGISTRATION_UNREGISTERED>;
+
+export type SetRegistrationRegisteredUnverifiedAction =
+  Action<UserActionType.SET_REGISTRATION_REGISTERED_UNVERIFIED>;
+
+export type SetRegistrationRegisteredVerifiedAction =
+  Action<UserActionType.SET_REGISTRATION_REGISTERED_VERIFIED>;
+
+
 /**
  * User actions union type
  */
@@ -113,4 +128,9 @@ export type UserAction =
   | SetGasEducationCarouselSeenAction
   | SetAppThemeAction
   | CheckedAuthAction
-  | SetAppServicesReadyAction;
+  | SetAppServicesReadyAction
+  | SetRegistrationUnregisteredAction
+  | SetRegistrationRegisteredUnverifiedAction
+  | SetRegistrationRegisteredVerifiedAction;
+
+

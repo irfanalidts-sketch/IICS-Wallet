@@ -1,3 +1,4 @@
+///home/irfan/WalletOTP/app/components/Views/Onboarding/index.js
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {

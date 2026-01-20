@@ -1,3 +1,4 @@
+///home/irfan/RW/app/components/Views/NetworkSelector/NetworkSelector.styles.ts
 // Third party dependencies.
 import Device from '../../../util/device';
 import { StyleSheet } from 'react-native';

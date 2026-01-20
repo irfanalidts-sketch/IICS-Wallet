@@ -1,1 +1,0 @@
-/home/irfan/New folder/metamask-mobile-Release-V1.1-13-Mon-2025/android/app/build/intermediates/cxx/RelWithDebInfo/5e51234m/obj/x86_64

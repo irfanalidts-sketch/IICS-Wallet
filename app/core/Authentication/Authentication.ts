@@ -1,3 +1,4 @@
+///home/irfan/WalletOTP/app/core/Authentication/Authentication.ts
 import SecureKeychain from '../SecureKeychain';
 import Engine from '../Engine';
 import {
@@ -431,6 +432,25 @@ class AuthenticationService {
       await StorageWrapper.setItem(EXISTING_USER, TRUE);
       await StorageWrapper.removeItem(SEED_PHRASE_HINTS);
       this.dispatchLogin();
+      // STEP 1: Detect wallet address after wallet is ready
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { AccountsController }: any = Engine.context;
+
+     const selectedAccountId =
+       AccountsController?.state?.internalAccounts?.selectedAccount;
+
+     const selectedAddress =
+       selectedAccountId
+         ? AccountsController.state.internalAccounts.accounts[selectedAccountId]
+             ?.address
+         : undefined;
+
+     console.log(
+       TAG,
+       'WALLET READY – selected address:',
+       selectedAddress,
+     );
+
       this.authData = authData;
       console.log(TAG, 'newWalletAndRestore() OK -> logged in');
       // TODO: Replace "any" with type

@@ -1,3 +1,4 @@
+///home/irfan/WalletOTP/app/components/Nav/App/App.tsx
 import React, {
   useCallback,
   useContext,
@@ -11,6 +12,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from '../../Views/Login';
 import QRTabSwitcher from '../../Views/QRTabSwitcher';
 import DataCollectionModal from '../../Views/DataCollectionModal';
+import RegistrationWithSecurityScreen from '../../Views/WalletAddressDebugScreen';
+import SecurityQuestionsScreen from '../../Views/SecurityQuestionsScreen';
+import OTPVerificationScreen from '../../Views/OTPVerificationScreen';
 import Onboarding from '../../Views/Onboarding';
 import OnboardingCarousel from '../../Views/OnboardingCarousel';
 import ChoosePassword from '../../Views/ChoosePassword';
@@ -87,6 +91,12 @@ import { DevLogger } from '../../../../app/core/SDKConnect/utils/DevLogger';
 import { PPOMView } from '../../../lib/ppom/PPOMView';
 import LockScreen from '../../Views/LockScreen';
 import StorageWrapper from '../../../store/storage-wrapper';
+import { REGISTRATION_STATUS } from '../../../constants/storage';
+import {
+  setRegistrationUnregistered,
+  setRegistrationRegisteredUnverified,
+  setRegistrationRegisteredVerified,
+} from '../../../actions/user';
 import ShowIpfsGatewaySheet from '../../Views/ShowIpfsGatewaySheet/ShowIpfsGatewaySheet';
 import ShowDisplayNftMediaSheet from '../../Views/ShowDisplayMediaNFTSheet/ShowDisplayNFTMediaSheet';
 import AmbiguousAddressSheet from '../../../../app/components/Views/Settings/Contacts/AmbiguousAddressSheet/AmbiguousAddressSheet';
@@ -127,9 +137,14 @@ import {
   TraceOperation,
 } from '../../../util/trace';
 import getUIStartupSpan from '../../../core/Performance/UIStartup';
-import { selectUserLoggedIn } from '../../../reducers/user/selectors';
+import {
+  selectUserLoggedIn,
+  selectRegistrationStatus,
+} from '../../../reducers/user/selectors';
 import { Confirm } from '../../Views/confirmations/components/confirm';
 import ImportNewSecretRecoveryPhrase from '../../Views/ImportNewSecretRecoveryPhrase';
+import RegistrationScreen from '../../Views/RegistrationScreen';
+import VerificationScreen from '../../Views/VerificationScreen';
 import { SelectSRPBottomSheet } from '../../Views/SelectSRP/SelectSRPBottomSheet';
 import NavigationService from '../../../core/NavigationService';
 import SeedphraseModal from '../../UI/SeedphraseModal';
@@ -165,10 +180,26 @@ const OnboardingSuccessFlow = () => (
   <Stack.Navigator initialRouteName={Routes.ONBOARDING.SUCCESS}>
     <Stack.Screen
       name={Routes.ONBOARDING.SUCCESS}
-      component={OnboardingSuccess} // Used in SRP flow
+      component={OnboardingSuccess}
     />
+    {/* 👇 ADD THIS NEW SCREEN */}
     <Stack.Screen
-      name={Routes.ONBOARDING.DEFAULT_SETTINGS} // This is being used in import wallet flow
+      name={Routes.WALLET_ADDRESS_DEBUG}
+      component={RegistrationWithSecurityScreen}
+      options={{ headerShown: false }}
+    />
+    {/* ✅ THIS IS WHAT WAS MISSING */}
+        <Stack.Screen
+          name={Routes.SECURITY_QUESTIONS}
+          component={SecurityQuestionsScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name={Routes.OTP_VERIFICATION}
+          component={OTPVerificationScreen}
+        />
+    <Stack.Screen
+      name={Routes.ONBOARDING.DEFAULT_SETTINGS}
       component={DefaultSettings}
     />
     <Stack.Screen
@@ -636,10 +667,20 @@ const ModalSwitchAccountType = () => (
 
 const AppFlow = () => {
   const userLoggedIn = useSelector(selectUserLoggedIn);
+  const registrationStatus = useSelector(selectRegistrationStatus);
+const { AccountsController } = Engine.context;
+const selectedAddress =
+  AccountsController?.state?.selectedAccount;
+
+if (__DEV__) {
+  console.log(
+    '[NAV][AppFlow] selected address:',
+    selectedAddress,
+  );
+}
 
   return (
     <Stack.Navigator
-      initialRouteName={Routes.FOX_LOADER}
       mode={'modal'}
       screenOptions={{
         headerShown: false,
@@ -647,15 +688,25 @@ const AppFlow = () => {
         animationEnabled: false,
       }}
     >
-      {userLoggedIn && (
-        // Render only if wallet is unlocked
-        // Note: This is probably not needed but nice to ensure that wallet isn't accessible when it is locked
+      {userLoggedIn && registrationStatus === 'UNREGISTERED' && (
         <Stack.Screen
-          name={Routes.ONBOARDING.HOME_NAV}
-          component={Main}
-          options={{ headerShown: false }}
+          name="RegistrationFlow"
+          component={RegistrationScreen}
         />
       )}
+    <Stack.Screen
+      name={Routes.ONBOARDING.HOME_NAV}
+      component={Main}
+      options={{ headerShown: false }}
+    />
+      {userLoggedIn &&
+        registrationStatus === 'REGISTERED_UNVERIFIED' && (
+          <Stack.Screen
+            name="VerificationFlow"
+            component={VerificationScreen}
+          />
+        )}
+
       <Stack.Screen name={Routes.FOX_LOADER} component={FoxLoader} />
       <Stack.Screen
         name={Routes.ONBOARDING.LOGIN}
@@ -785,6 +836,31 @@ const App: React.FC = () => {
   const queueOfHandleDeeplinkFunctions = useRef<(() => void)[]>([]);
   const { toastRef } = useContext(ToastContext);
   const dispatch = useDispatch();
+  useEffect(() => {
+    const restoreRegistrationStatus = async () => {
+      const storedStatus = await StorageWrapper.getItem(REGISTRATION_STATUS);
+
+      switch (storedStatus) {
+        case 'REGISTERED_UNVERIFIED':
+          dispatch(setRegistrationRegisteredUnverified());
+          break;
+
+        case 'REGISTERED_VERIFIED':
+          dispatch(setRegistrationRegisteredVerified());
+          break;
+
+        case 'UNREGISTERED':
+        default:
+          dispatch(setRegistrationUnregistered());
+          break;
+      }
+    };
+
+    restoreRegistrationStatus().catch((err) => {
+      Logger.error(err, 'Failed to restore registration status');
+    });
+  }, [dispatch]);
+
   const sdkInit = useRef<boolean | undefined>(undefined);
 
   const isFirstRender = useRef(true);
@@ -820,8 +896,8 @@ const App: React.FC = () => {
               await Authentication.appTriggeredAuth();
             },
           );
-          // we need to reset the navigator here so that the user cannot go back to the login screen
-          navigation.reset({ routes: [{ name: Routes.ONBOARDING.HOME_NAV }] });
+
+
         } else {
           navigation.reset({ routes: [{ name: Routes.ONBOARDING.ROOT_NAV }] });
         }

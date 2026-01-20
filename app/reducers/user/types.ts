@@ -1,4 +1,11 @@
+//home/irfan/WalletOTP/app/reducers/user/types.ts
 import { AppThemeKey } from '../../util/theme/models';
+
+// Registration status for wallet user
+export type RegistrationStatus =
+  | 'UNREGISTERED'
+  | 'REGISTERED_UNVERIFIED'
+  | 'REGISTERED_VERIFIED';
 
 /**
  * User state
@@ -17,4 +24,7 @@ export interface UserState {
   appTheme: AppThemeKey;
   ambiguousAddressEntries: Record<string, unknown>;
   appServicesReady: boolean;
+
+  // Registration flow
+  registrationStatus: RegistrationStatus;
 }

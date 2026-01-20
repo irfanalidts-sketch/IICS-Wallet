@@ -1,3 +1,4 @@
+///home/irfan/WalletOTP/app/components/Views/OnboardingSuccess/index.tsx
 import React, { useCallback, useLayoutEffect, useMemo } from 'react';
 import { ScrollView, View, Linking, TouchableOpacity } from 'react-native';
 import Button, {
@@ -242,12 +243,15 @@ export const OnboardingSuccess = () => {
 
   const successFlow = params?.successFlow;
 
-  const nextScreen = ResetNavigationToHome;
+  const handleDone = () => {
+    // Navigate to WalletAddressDebugScreen
+    navigation.navigate(Routes.WALLET_ADDRESS_DEBUG);
+  };
 
   return (
     <OnboardingSuccessComponent
       successFlow={successFlow}
-      onDone={() => navigation.dispatch(nextScreen)}
+      onDone={handleDone}
     />
   );
 };

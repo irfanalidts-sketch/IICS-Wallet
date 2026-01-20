@@ -1,5 +1,4 @@
-//below code is from \\wsl.localhost\Ubuntu-22.04\home\irfan\New folder\JustWallet\app\core\Engine\Engine.ts
-/* eslint-disable @typescript-eslint/no-shadow */
+///home/irfan/RW/app/core/Engine/Engine.ts
 import Crypto from 'react-native-quick-crypto';
 
 import {
@@ -15,6 +14,7 @@ import {
   CodefiTokenPricesServiceV2,
   TokenSearchDiscoveryDataController,
 } from '@metamask/assets-controllers';
+import { IIC_DEFAULT_TOKENS } from '../../util/tokens/iicDefaultTokens';
 import { AccountsController } from '@metamask/accounts-controller';
 import { AddressBookController } from '@metamask/address-book-controller';
 import { ComposableController } from '@metamask/composable-controller';
@@ -230,6 +230,7 @@ import { captureException } from '@sentry/react-native';
 import { WebSocketServiceInit } from './controllers/snaps/websocket-service-init';
 
 const NON_EMPTY = 'NON_EMPTY';
+const IIC_CHAIN_ID = '0x672' as const;
 
 const encryptor = new Encryptor({
   keyDerivationOptions: LEGACY_DERIVATION_OPTIONS,
@@ -461,6 +462,9 @@ export class Engine {
       },
     );
     networkController.initializeProvider();
+
+    currentChainId = getGlobalChainId(networkController);
+
 
     const assetsContractController = new AssetsContractController({
       messenger: this.controllerMessenger.getRestricted({
@@ -1361,30 +1365,32 @@ export class Engine {
       state: initialState.NftController,
     });
 
-    const tokensController = new TokensController({
-      chainId: getGlobalChainId(networkController),
-      // @ts-expect-error at this point in time the provider will be defined by the `networkController.initializeProvider`
-      provider: networkController.getProviderAndBlockTracker().provider,
-      state: initialState.TokensController,
-      messenger: this.controllerMessenger.getRestricted({
-        name: 'TokensController',
-        allowedActions: [
-          'ApprovalController:addRequest',
-          'NetworkController:getNetworkClientById',
-          'AccountsController:getAccount',
-          'AccountsController:getSelectedAccount',
-          'AccountsController:listAccounts',
-        ],
-        allowedEvents: [
-          'PreferencesController:stateChange',
-          'NetworkController:networkDidChange',
-          'NetworkController:stateChange',
-          'TokenListController:stateChange',
-          'AccountsController:selectedEvmAccountChange',
-          'KeyringController:accountRemoved',
-        ],
-      }),
-    });
+
+const tokensControllerRef = new TokensController({
+  chainId: getGlobalChainId(networkController),
+  provider: networkController.getProviderAndBlockTracker().provider,
+  state: {
+    ...initialState.TokensController,
+  },
+  messenger: this.controllerMessenger.getRestricted({
+    name: 'TokensController',
+    allowedActions: [
+      'ApprovalController:addRequest',
+      'NetworkController:getNetworkClientById',
+      'AccountsController:getAccount',
+      'AccountsController:getSelectedAccount',
+      'AccountsController:listAccounts',
+    ],
+    allowedEvents: [
+      'PreferencesController:stateChange',
+      'NetworkController:networkDidChange',
+      'NetworkController:stateChange',
+      'TokenListController:stateChange',
+      'AccountsController:selectedEvmAccountChange',
+      'KeyringController:accountRemoved',
+    ],
+  }),
+});
 
     const earnController = new EarnController({
       messenger: this.controllerMessenger.getRestricted({
@@ -1420,7 +1426,7 @@ export class Engine {
       AppMetadataController: controllersByName.AppMetadataController,
       AssetsContractController: assetsContractController,
       NftController: nftController,
-      TokensController: tokensController,
+      TokensController: tokensControllerRef,
       TokenListController: tokenListController,
       TokenDetectionController: new TokenDetectionController({
         messenger: this.controllerMessenger.getRestricted({
@@ -1649,6 +1655,67 @@ export class Engine {
       },
     );
 
+  this.controllerMessenger.subscribe(
+    AppConstants.NETWORK_STATE_CHANGE_EVENT,
+    async (state: NetworkState) => {
+      const newChainId = getGlobalChainId(this.context.NetworkController);
+
+      // 1️⃣ Auto-add DINR when switching to IIC network (same path as manual import)
+      if (newChainId === IIC_CHAIN_ID) {
+        const selectedAccount =
+          this.context.AccountsController.getSelectedAccount().address;
+
+        const existingTokens =
+          tokensControllerRef.state.allTokens?.[IIC_CHAIN_ID]?.[
+            selectedAccount
+          ] ?? [];
+
+        const dinaarExists = existingTokens.some(
+          (t) =>
+            t.address.toLowerCase() ===
+            '0xF7FABd27A565848F435febAa98579Ff32D9b8A91'.toLowerCase(),
+        );
+
+        if (!dinaarExists) {
+          await tokensControllerRef.watchAsset({
+            asset: {
+              address: '0xF7FABd27A565848F435febAa98579Ff32D9b8A91',
+              symbol: 'DINR',
+              decimals: 18,
+              name: 'Dinaar',
+            },
+            type: 'ERC20',
+            interactingAddress: selectedAccount,
+            networkClientId: state.selectedNetworkClientId,
+          });
+        }
+      }
+
+      // 2️⃣ Reconfigure controllers on actual network change
+      if (
+        state.networksMetadata[state.selectedNetworkClientId].status ===
+          NetworkStatus.Available &&
+        newChainId !== currentChainId
+      ) {
+        setTimeout(() => {
+          this.configureControllersOnNetworkChange();
+          currentChainId = newChainId;
+        }, 500);
+      }
+
+      // 3️⃣ Update Redux networkId
+      try {
+        const networkId = await deprecatedGetNetworkId();
+        store.dispatch(networkIdUpdated(networkId));
+      } catch (error) {
+        Logger.error(
+          error,
+          `Network ID not changed, current chainId: ${newChainId}`,
+        );
+      }
+    },
+  );
+
     const { NftController: nfts } = this.context;
 
     if (process.env.MM_OPENSEA_KEY) {
@@ -1659,40 +1726,6 @@ export class Engine {
       'TransactionController:incomingTransactionsReceived',
       (incomingTransactions: TransactionMeta[]) => {
         NotificationManager.gotIncomingTransaction(incomingTransactions);
-      },
-    );
-
-    this.controllerMessenger.subscribe(
-      AppConstants.NETWORK_STATE_CHANGE_EVENT,
-      (state: NetworkState) => {
-        if (
-          state.networksMetadata[state.selectedNetworkClientId].status ===
-            NetworkStatus.Available &&
-          getGlobalChainId(networkController) !== currentChainId
-        ) {
-          // We should add a state or event emitter saying the provider changed
-          setTimeout(() => {
-            this.configureControllersOnNetworkChange();
-            currentChainId = getGlobalChainId(networkController);
-          }, 500);
-        }
-      },
-    );
-
-    this.controllerMessenger.subscribe(
-      AppConstants.NETWORK_STATE_CHANGE_EVENT,
-      async () => {
-        try {
-          const networkId = await deprecatedGetNetworkId();
-          store.dispatch(networkIdUpdated(networkId));
-        } catch (error) {
-          console.error(
-            error,
-            `Network ID not changed, current chainId: ${getGlobalChainId(
-              networkController,
-            )}`,
-          );
-        }
       },
     );
 
@@ -1753,12 +1786,12 @@ export class Engine {
         withSnapKeyring as MultichainRouterArgs['withSnapKeyring'],
     });
 
-    this.configureControllersOnNetworkChange();
-    this.startPolling();
-    this.handleVaultBackup();
+      this.configureControllersOnNetworkChange();
+        this.startPolling();
+        this.handleVaultBackup();
 
-    Engine.instance = this;
-  }
+        Engine.instance = this;
+      }
 
   handleVaultBackup() {
     this.controllerMessenger.subscribe(

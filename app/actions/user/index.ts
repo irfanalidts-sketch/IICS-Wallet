@@ -1,3 +1,4 @@
+//home/irfan/WalletOTP/app/actions/user/index.ts
 import { type AppThemeKey } from '../../util/theme/models';
 import {
   type InterruptBiometricsAction,
@@ -25,6 +26,9 @@ import {
 } from './types';
 
 export * from './types';
+import StorageWrapper from '../../store/storage-wrapper';
+import { REGISTRATION_STATUS } from '../../constants/storage';
+
 
 export function interruptBiometrics(): InterruptBiometricsAction {
   return {
@@ -169,3 +173,29 @@ export function setAppServicesReady(): SetAppServicesReadyAction {
     type: UserActionType.SET_APP_SERVICES_READY,
   };
 }
+/**
+ * Registration flow actions (persisted)
+ */
+
+export function setRegistrationUnregistered() {
+  StorageWrapper.setItem(REGISTRATION_STATUS, 'UNREGISTERED');
+  return {
+    type: UserActionType.SET_REGISTRATION_UNREGISTERED,
+  };
+}
+
+export function setRegistrationRegisteredUnverified() {
+  StorageWrapper.setItem(REGISTRATION_STATUS, 'REGISTERED_UNVERIFIED');
+  return {
+    type: UserActionType.SET_REGISTRATION_REGISTERED_UNVERIFIED,
+  };
+}
+
+export function setRegistrationRegisteredVerified() {
+  StorageWrapper.setItem(REGISTRATION_STATUS, 'REGISTERED_VERIFIED');
+  return {
+    type: UserActionType.SET_REGISTRATION_REGISTERED_VERIFIED,
+  };
+}
+
+

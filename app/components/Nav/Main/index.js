@@ -1,3 +1,4 @@
+///home/irfan/WalletOTP/app/components/Nav/Main/index.js
 import React, {
   useState,
   useEffect,
@@ -117,6 +118,7 @@ const Main = (props) => {
   const backgroundMode = useRef(false);
   const locale = useRef(I18n.locale);
   const removeConnectionStatusListener = useRef();
+  const userLoggedIn = useSelector((state) => state.user.userLoggedIn);
 
   const { connectionChangeHandler } = useConnectionHandler(props.navigation);
 
@@ -423,10 +425,15 @@ const Main = (props) => {
     <React.Fragment>
       <View style={styles.flex}>
         {!forceReload ? (
-          <MainNavigator navigation={props.navigation} />
+          userLoggedIn ? (
+            <MainNavigator navigation={props.navigation} />
+          ) : (
+            renderLoader()
+          )
         ) : (
           renderLoader()
         )}
+
         <GlobalAlert />
         <FadeOutOverlay />
         <Notification navigation={props.navigation} />

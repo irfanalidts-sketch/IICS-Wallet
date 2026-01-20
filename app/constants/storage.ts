@@ -1,3 +1,4 @@
+///home/irfan/WalletOTP/app/constants/storage.ts
 const mm = 'MetaMask';
 const prefix = `@${mm}:`;
 const USE_TERMS_VERSION = 'v1.0';
@@ -8,6 +9,7 @@ export const BIOMETRY_CHOICE_DISABLED = `${prefix}biometryChoiceDisabled`;
 
 export const PASSCODE_CHOICE = `${prefix}passcodeChoice`;
 export const PASSCODE_DISABLED = `${prefix}passcodeDisabled`;
+export const REGISTRATION_STATUS = `${prefix}registrationStatus`;
 
 export const ONBOARDING_WIZARD = `${prefix}onboardingWizard`;
 export const METRICS_OPT_IN = `${prefix}metricsOptIn`;

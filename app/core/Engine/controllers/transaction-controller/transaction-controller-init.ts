@@ -1,3 +1,4 @@
+///home/irfan/RW/app/core/Engine/controllers/transaction-controller/transaction-controller-init.ts
 import {
   TransactionController,
   TransactionType,
@@ -7,6 +8,7 @@ import {
   type PublishBatchHookTransaction,
   type PublishBatchHookResult,
 } from '@metamask/transaction-controller';
+import { notifyBalanceRefresh } from '../../../../core/BalanceRefresh';
 import { SmartTransactionStatuses } from '@metamask/smart-transactions-controller/dist/types';
 import { hasProperty, Hex } from '@metamask/utils';
 import { ApprovalController } from '@metamask/approval-controller';
@@ -303,8 +305,12 @@ function addTransactionControllerListeners(
         transactionMeta,
         transactionEventHandlerRequest,
       );
+
+      // 🔔 Trigger UI balance refresh
+      notifyBalanceRefresh();
     },
   );
+
 
   initMessenger.subscribe(
     'TransactionController:transactionDropped',

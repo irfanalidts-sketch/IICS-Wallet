@@ -1,3 +1,4 @@
+///home/irfan/WalletOTP/app/reducers/user/selectors.ts
 import { RootState } from '..';
 
 /**
@@ -14,15 +15,23 @@ export const selectAppServicesReady = (state: RootState) =>
 /**
  * Selects the userLoggedIn state
  */
-export const selectUserLoggedIn = (state: RootState) => state.user.userLoggedIn;
+export const selectUserLoggedIn = (state: RootState) =>
+  state.user.userLoggedIn;
 
 /**
  * Selects the passwordSet state
  */
-export const selectPasswordSet = (state: RootState) => state.user.passwordSet;
+export const selectPasswordSet = (state: RootState) =>
+  state.user.passwordSet;
 
 /**
  * Selects the seedphraseBackedUp state
  */
 export const selectSeedphraseBackedUp = (state: RootState) =>
   state.user.seedphraseBackedUp;
+
+/**
+ * Selects the registrationStatus state
+ */
+export const selectRegistrationStatus = (state: RootState) =>
+  state.user.registrationStatus;

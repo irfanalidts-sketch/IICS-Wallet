@@ -1,5 +1,10 @@
+//home/irfan/WalletOTP/app/constants/navigation/Routes.ts
 const Routes = {
   WALLET_VIEW: 'WalletView',
+  // 👇 ADD THIS (Step 1)
+  WALLET_ADDRESS_DEBUG: 'WalletAddressDebug',
+  SECURITY_QUESTIONS: 'SecurityQuestions',
+  OTP_VERIFICATION: 'OtpVerification',
   BROWSER_TAB_HOME: 'BrowserTabHome',
   BROWSER_VIEW: 'BrowserView',
   SETTINGS_VIEW: 'SettingsView',

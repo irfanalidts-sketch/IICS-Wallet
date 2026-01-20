@@ -1,3 +1,4 @@
+///home/irfan/RW/app/selectors/preferencesController.ts
 import { createSelector } from 'reselect';
 import { PreferencesState } from '@metamask/preferences-controller';
 import { RootState } from '../reducers';

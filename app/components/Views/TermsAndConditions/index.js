@@ -1,3 +1,4 @@
+//below code is from /home/irfan/ReleaseWallet/app/components/Views/TermsAndConditions/index.js
 import React, { PureComponent } from 'react';
 import { Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import PropTypes from 'prop-types';

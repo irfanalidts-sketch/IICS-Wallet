@@ -3,6 +3,7 @@ import Engine from '../../../../core/Engine';
 import Logger from '../../../../util/Logger';
 import { InternalAccount } from '@metamask/keyring-internal-api';
 import { performEvmRefresh } from './tokenRefreshUtils';
+import { notifyBalanceRefresh } from '../../../../core/BalanceRefresh';
 
 interface RefreshTokensProps {
   isEvmSelected: boolean;
@@ -25,6 +26,7 @@ export const refreshTokens = async ({
     if (selectedAccountId) {
       try {
         await MultichainBalancesController.updateBalance(selectedAccountId);
+        notifyBalanceRefresh();
       } catch (error) {
         Logger.error(error as Error, 'Error while refreshing NonEvm tokens');
       }
@@ -33,4 +35,5 @@ export const refreshTokens = async ({
   }
 
   await performEvmRefresh(evmNetworkConfigurationsByChainId, nativeCurrencies);
+  notifyBalanceRefresh();
 };
