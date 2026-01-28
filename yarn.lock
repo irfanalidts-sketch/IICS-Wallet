@@ -6476,12 +6476,13 @@
   resolved "https://registry.yarnpkg.com/@open-rpc/specification-extension-spec/-/specification-extension-spec-1.0.2.tgz#957961bf4ccf870a28779b90cecf9fd0963c4825"
   integrity sha512-EPVI1Mgp5vDSN2Xn+eWjd2t30WU+R0nFeNoP/dp3ox5/qUhNdqlNcwGJDNoJlqK56rk09FYXWJXKLHae4eBE8w==
 
-"@open-rpc/test-coverage@^2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@open-rpc/test-coverage/-/test-coverage-2.2.2.tgz#8aa9b6dd6f63f50f85c8b4fa689347f03d7ba854"
-  integrity sha512-gQoDYPu3J4sdxiObTAbwotjbNhFpCQmDvbaYt4fDim2cKRREnnESjKaqFZFIqOn0if6kNhrUIMWaQxESsSvq1Q==
+"@open-rpc/test-coverage@^2.2.4":
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/@open-rpc/test-coverage/-/test-coverage-2.2.4.tgz#a59aa88f41124ffbe5c406cd72935b6fcd48fa95"
+  integrity sha512-bCphsYVkBuVatXMOv5jrA0Qoh9Yx5Gpxtzi/IhUnN1ZODYbv+OOwrHsTvw/ahV0PDvIc3tkhGrx0NL9FhENf3Q==
   dependencies:
     "@open-rpc/html-reporter-react" "^0.0.4"
+    "@open-rpc/meta-schema" "^1.14.6"
     "@open-rpc/schema-utils-js" "^1.16.2"
     "@types/isomorphic-fetch" "0.0.35"
     "@types/lodash" "^4.14.162"
